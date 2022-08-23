@@ -1,3 +1,6 @@
+body {
+  cursor: url("/images/cur116.cur"), auto;
+}
 .sidebar {
   left: -8rem;
   width: 8rem;
