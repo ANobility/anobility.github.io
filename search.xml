@@ -128,6 +128,7 @@
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="操作系统概念"><a href="#操作系统概念" class="headerlink" title="操作系统概念"></a>操作系统概念</h1><h2 id="进程"><a href="#进程" class="headerlink" title="进程"></a>进程</h2><p>进程：正在进行的一个过程或者说一个任务。而负责执行任务则是cpu。</p>
 <p>系统中的程序可以按照顺序执行，也可以并发执行。其中在顺序执行的过程中主要的特点就是顺序性、封闭性和可再现性，而并发执行的程序，破坏了程序的封闭性和可再现性，使得程序和执行程序的活动不再一一对应，这就涉及到了进程之间的同步和互斥问题</p>
 <p>进程状态的描述有两种模型，一种是三态模型，另一种是五态模型，下边我们就分别介绍下这两种模型。</p>
+<span id="more"></span>
 <h3 id="三态模型"><a href="#三态模型" class="headerlink" title="三态模型"></a>三态模型</h3><p><img src="https://pic4.zhimg.com/v2-b1a27ac5c0215c1eecf8442becb7b32b_r.jpg"><br>系统中进程在处理器上交替运行，状态也在不断的发生变化，所以进程一般有三种状态，即运行、就绪、阻塞，关于这三种状态的描述如下：</p>
 <blockquote>
 <p><strong>运行</strong>，当一个进程在处理机上运行时，就称这个进程处于运行状态。<br><strong>就绪</strong>，一个进程获得了除处理机外的一切资源，一旦得到处理机即可运行，就称这个进程处于就绪状态。<br><strong>阻塞</strong>，阻塞也叫做等待或睡眠状态，一个进程正在等待某一事件发生而暂时停止运行，这时即使处理机分配进程也无法运行，所以称这个进程处于阻塞状态。</p>
