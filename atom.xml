@@ -6,7 +6,7 @@
   <link href="https://anobiity.github.io/atom.xml" rel="self"/>
   
   <link href="https://anobiity.github.io/"/>
-  <updated>2022-08-24T14:48:08.364Z</updated>
+  <updated>2022-08-24T15:36:56.733Z</updated>
   <id>https://anobiity.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>操作系统笔记（1）- 操作系统概念与结构</title>
+    <link href="https://anobiity.github.io/2022/08/24/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%AC%94%E8%AE%B0-%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%A6%82%E5%BF%B5%E4%B8%8E%E7%BB%93%E6%9E%84/"/>
+    <id>https://anobiity.github.io/2022/08/24/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%AC%94%E8%AE%B0-%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%A6%82%E5%BF%B5%E4%B8%8E%E7%BB%93%E6%9E%84/</id>
+    <published>2022-08-24T16:01:13.000Z</published>
+    <updated>2022-08-24T15:36:56.733Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="操作系统" scheme="https://anobiity.github.io/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    
+  </entry>
   
   <entry>
     <title>操作系统笔记（1）- 计算机硬件介绍</title>
