@@ -11,7 +11,7 @@
         name="viewport"
         content="width=device-width, initial-scale=1, maximum-scale=1"
       />
-      <title>操作系统笔记（1） |  Weber&#39;s island</title>
+      <title>操作系统笔记（1）- 计算机硬件介绍 |  Weber&#39;s island</title>
   <meta name="generator" content="hexo-theme-ayer">
       
       <link rel="shortcut icon" href="/favicon.ico" />
@@ -54,7 +54,7 @@
     <main class="content on">
       <section class="outer">
   <article
-  id="post-操作系统笔记"
+  id="post-操作系统笔记-硬件介绍"
   class="article article-type-post"
   itemscope
   itemprop="blogPost"
@@ -65,7 +65,7 @@
     <header class="article-header">
        
 <h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  操作系统笔记（1）
+  操作系统笔记（1）- 计算机硬件介绍
 </h1>
  
 
@@ -73,7 +73,7 @@
     </header>
      
     <div class="article-meta">
-      <a href="/2022/08/23/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%AC%94%E8%AE%B0/" class="article-date">
+      <a href="/2022/08/23/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%AC%94%E8%AE%B0-%E7%A1%AC%E4%BB%B6%E4%BB%8B%E7%BB%8D/" class="article-date">
   <time datetime="2022-08-23T17:56:38.000Z" itemprop="datePublished">2022-08-23</time>
 </a>   
 <div class="word_count">
@@ -110,9 +110,11 @@
 <p>文件：对 I&#x2F;O 设备的抽象<br>虚拟内存：对程序存储器的抽象<br>进程：对一个正在运行程序的抽象<br>虚拟机：对整个操作系统的抽象</p>
 </blockquote>
 <p>学习操作系统可以让我们有效解决并发问题。</p>
+<span id="more"></span>
 <h1 id="操作系统入门"><a href="#操作系统入门" class="headerlink" title="操作系统入门"></a>操作系统入门</h1><h2 id="操作系统"><a href="#操作系统" class="headerlink" title="操作系统"></a>操作系统</h2><p>代计算机系统由一个或多个处理器、主存、打印机、键盘、鼠标、显示器、网络接口以及各种输入&#x2F;输出设备构成。</p>
-<p><img src="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%AC%94%E8%AE%B0/img1.png"><br>在硬件的基础之上，有一层软件，这层软件能够响应用户的输入指令达到控制硬件的效果，这种软件被称之为‘操作系统’。</p>
-<p>我们一般常见的操作系统主要有 <strong>Windows、Linux、FreeBSD 或 macOS</strong> ，这种带有图形界面的操作系统被称为 <strong>图形用户界面(Graphical User Interface, GUI)，而基于文本、命令行的通常称为 Shell</strong>。<br><img src="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%AC%94%E8%AE%B0/img2.png"></p>
+<p><img src="https://pic.leetcode-cn.com/1612664719-ZmxjpB-os1-1.png"></p>
+<p>在硬件的基础之上，有一层软件，这层软件能够响应用户的输入指令达到控制硬件的效果，这种软件被称之为‘操作系统’。</p>
+<p>我们一般常见的操作系统主要有 <strong>Windows、Linux、FreeBSD 或 macOS</strong> ，这种带有图形界面的操作系统被称为 <strong>图形用户界面(Graphical User Interface, GUI)，而基于文本、命令行的通常称为 Shell</strong>。<br><img src="https://pic.leetcode-cn.com/1612664723-uBmzJL-os1-2.png"></p>
 <h2 id="计算机硬件介绍"><a href="#计算机硬件介绍" class="headerlink" title="计算机硬件介绍"></a>计算机硬件介绍</h2><h3 id="CPU"><a href="#CPU" class="headerlink" title="CPU"></a>CPU</h3><p>CPU 是计算机的大脑，它主要和内存进行交互，从内存中提取指令并执行它。一个 CPU 的执行周期是从内存中提取第一条指令、解码并决定它的类型和操作数，执行，然后再提取、解码执行后续的指令。重复该循环直到程序运行完毕。</p>
 <p>中央处理单元（CPU）主要由运算器、控制器、寄存器三部分组成，从字面意思看运算器就是起着运算的作用，控制器就是负责发出CPU每条指令所需要的信息，寄存器就是保存运算或者指令的一些临时文件，这样可以保证更高的速度。</p>
 <p>CPU都有一组特殊的可以执行的指令集，主要分为X86架构和ARM架构。<br>CPU架构可以被分为两大类，即所谓的“复杂指令集”与“精简指令集”系统，也就是经常看到的“CISC”与“RISC”。 Intel和ARM处理器的第一个区别是，前者使用复杂指令（CISC)，而后者使用精简指令集（RISC）。</p>
@@ -127,7 +129,7 @@
 <p><strong>并行</strong>：同时进行，如：一边打电话，一边炒菜；<br><strong>并发</strong>：在一段时间内交替进行，显得好像是“同时”进行，如：在厨房炒菜，听到座机响了，于是去客厅接电话，然后再回到厨房炒菜，再去客厅接电话……<br>单 CPU 多线程提供的是并发能力；而多 CPU 则可以提供并行能力</p>
 </blockquote>
 <h3 id="存储器"><a href="#存储器" class="headerlink" title="存储器"></a>存储器</h3><p>计算机中第二个主要的组件就是存储器。理想情况下，存储器应该非常快速(比执行一条指令要快，从而不会拖慢 CPU 执行效率)，而且足够大且便宜，但是目前的技术手段无法满足三者的需求。于是采用了不同的处理方式，存储器系统采用一种分层次的结构</p>
-<p><img src="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%AC%94%E8%AE%B0/img3.png"></p>
+<p><img src="https://pic.leetcode-cn.com/1612665300-EydqrQ-os3-1.png"></p>
 <h4 id="寄存器"><a href="#寄存器" class="headerlink" title="寄存器"></a>寄存器</h4><p>存储器的顶层是 CPU 中的寄存器，它们用和 CPU 一样的材料制成，所以和 CPU 一样快。程序必须在软件中自行管理这些寄存器</p>
 <h4 id="高速缓冲-cache"><a href="#高速缓冲-cache" class="headerlink" title="高速缓冲 cache"></a>高速缓冲 cache</h4><p>位于寄存器下面的是高速缓存，大多集成在CUP内部。<br>CPU先查询Cache中是否有数据，如果有，直接读取即可。</p>
 <p>如果Cache中没有，则从内存中读取数据，同时把数据放入Cache中，然后把数据返回给CPU。<br>整个流程其实很简单，但对于Cache和内存信息的交换，需要考虑一些问题：</p>
@@ -146,7 +148,7 @@
 <h4 id="片内总线"><a href="#片内总线" class="headerlink" title="片内总线"></a>片内总线</h4><p>片内总线是指芯片内部的总线，如在 CPU 芯片内部，寄存器与寄存器之间、寄存器与算逻单元 ALU 之间都由 片内总线连接。</p>
 <h4 id="系统总线"><a href="#系统总线" class="headerlink" title="系统总线"></a>系统总线</h4><p>系统总线可以分为三个：数据总线、地址总线和控制总线</p>
 <p>系统总线是指 CPU、主存、IO 设备（通过I&#x2F;O接口）各大部件之间的信息传输线。由于这些部件通常都安放在主板或各个插件板(插卡)上，故又称板级总线(在一块电路板上各芯片间的连线)或板间总线</p>
-<p><img src="/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%AC%94%E8%AE%B0/img4bus.png"></p>
+<p><img src="https://img-blog.csdnimg.cn/20190813145834413.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N0YXJ0ZXJfX19fXw==,size_16,color_FFFFFF,t_70"></p>
 <blockquote>
 <p><strong>数据总线</strong>：<br>数据总线用来传输各功能部件之间的数据信息，它是双向传输总线，其位数与机器字长、存储字长有关，一般为 8 位、16 位或 32 位。数据总线的位数称为数据总线宽度，它是衡量系统性能的一个重要参数。</p>
 </blockquote>
@@ -169,9 +171,7 @@
 <li>传输响应：表示数据已被接收,或已将数据送至数据总线上。</li>
 </ul>
 </blockquote>
-<blockquote>
-<p><strong>通信总线</strong>：<br>通信是用于计算机系统之间或计算机系统与其他系统（如远程通信设备、测试设备）之间信息传送的总线，通信总线也称为外部总线。</p>
-</blockquote>
+<h4 id="通信总线"><a href="#通信总线" class="headerlink" title="通信总线"></a>通信总线</h4><p>通信是用于计算机系统之间或计算机系统与其他系统（如远程通信设备、测试设备）之间信息传送的总线，通信总线也称为外部总线。</p>
 <p>更多关于总线的知识请看博客<a target="_blank" rel="noopener" href="https://blog.51cto.com/yang/3023701">总线介绍</a></p>
 <h3 id="计算机启动过程"><a href="#计算机启动过程" class="headerlink" title="计算机启动过程"></a>计算机启动过程</h3><p>计算机的启动步骤主要分为四步，BIOS → 主引导记录 → 硬盘启动 → 操作系统</p>
 <h4 id="BIOS"><a href="#BIOS" class="headerlink" title="BIOS"></a>BIOS</h4><p>当电源开关启动后，主板会通电并初始化固件（即芯片集等），而BIOS（Basic Input Output System 基本输入输出系统）的运行代码则早已被刷入集成在主板的ROM芯片中。</p>
@@ -265,7 +265,7 @@
     <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://anobiity.github.io/2022/08/23/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%AC%94%E8%AE%B0/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://anobiity.github.io/2022/08/23/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%AC%94%E8%AE%B0-%E7%A1%AC%E4%BB%B6%E4%BB%8B%E7%BB%8D/" alt="微信分享二维码">
     </div>
 </div>
 

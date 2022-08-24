@@ -6,7 +6,7 @@
   <link href="https://anobiity.github.io/atom.xml" rel="self"/>
   
   <link href="https://anobiity.github.io/"/>
-  <updated>2022-08-24T13:46:39.186Z</updated>
+  <updated>2022-08-24T14:48:08.364Z</updated>
   <id>https://anobiity.github.io/</id>
   
   <author>
@@ -17,20 +17,18 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>操作系统笔记（1）</title>
-    <link href="https://anobiity.github.io/2022/08/23/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%AC%94%E8%AE%B0/"/>
-    <id>https://anobiity.github.io/2022/08/23/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%AC%94%E8%AE%B0/</id>
+    <title>操作系统笔记（1）- 计算机硬件介绍</title>
+    <link href="https://anobiity.github.io/2022/08/23/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%AC%94%E8%AE%B0-%E7%A1%AC%E4%BB%B6%E4%BB%8B%E7%BB%8D/"/>
+    <id>https://anobiity.github.io/2022/08/23/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%AC%94%E8%AE%B0-%E7%A1%AC%E4%BB%B6%E4%BB%8B%E7%BB%8D/</id>
     <published>2022-08-23T17:56:38.000Z</published>
-    <updated>2022-08-24T13:46:39.186Z</updated>
+    <updated>2022-08-24T14:48:08.364Z</updated>
     
     
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;</summary>
-        
-      
+    <summary type="html">&lt;h1 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h1&gt;&lt;p&gt;操作系统也是一种软件，但是操作系统是一种非常复杂的软件。操作系统提供了几种抽象模型&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;文件：对 I&amp;#x2F;O 设备的抽象&lt;br&gt;虚拟内存：对程序存储器的抽象&lt;br&gt;进程：对一个正在运行程序的抽象&lt;br&gt;虚拟机：对整个操作系统的抽象&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;学习操作系统可以让我们有效解决并发问题。&lt;/p&gt;</summary>
     
     
     
