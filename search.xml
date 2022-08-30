@@ -27,7 +27,7 @@
 </blockquote>
 <p>学习操作系统可以让我们有效解决并发问题。</p>
 <span id="more"></span>
-<h1 id="操作系统入门"><a href="#操作系统入门" class="headerlink" title="操作系统入门"></a>操作系统入门</h1><h2 id="操作系统"><a href="#操作系统" class="headerlink" title="操作系统"></a>操作系统</h2><p>代计算机系统由一个或多个处理器、主存、打印机、键盘、鼠标、显示器、网络接口以及各种输入&#x2F;输出设备构成。</p>
+<h1 id="操作系统入门"><a href="#操作系统入门" class="headerlink" title="操作系统入门"></a>操作系统入门</h1><h2 id="操作系统"><a href="#操作系统" class="headerlink" title="操作系统"></a>操作系统</h2><p>现代计算机系统由一个或多个处理器、主存、打印机、键盘、鼠标、显示器、网络接口以及各种输入&#x2F;输出设备构成。</p>
 <p><img src="https://pic.leetcode-cn.com/1612664719-ZmxjpB-os1-1.png"></p>
 <p>在硬件的基础之上，有一层软件，这层软件能够响应用户的输入指令达到控制硬件的效果，这种软件被称之为‘操作系统’。</p>
 <p>我们一般常见的操作系统主要有 <strong>Windows、Linux、FreeBSD 或 macOS</strong> ，这种带有图形界面的操作系统被称为 <strong>图形用户界面(Graphical User Interface, GUI)，而基于文本、命令行的通常称为 Shell</strong>。<br><img src="https://pic.leetcode-cn.com/1612664723-uBmzJL-os1-2.png"></p>
