@@ -6,7 +6,7 @@
   <link href="https://anobiity.github.io/atom.xml" rel="self"/>
   
   <link href="https://anobiity.github.io/"/>
-  <updated>2022-09-13T19:18:27.035Z</updated>
+  <updated>2022-09-15T14:29:08.535Z</updated>
   <id>https://anobiity.github.io/</id>
   
   <author>
@@ -15,6 +15,23 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>9.15蚂蚁集团算法岗笔试</title>
+    <link href="https://anobiity.github.io/2022/09/15/9-15%E8%9A%82%E8%9A%81%E9%9B%86%E5%9B%A2%E7%AE%97%E6%B3%95%E5%B2%97%E7%AC%94%E8%AF%95/"/>
+    <id>https://anobiity.github.io/2022/09/15/9-15%E8%9A%82%E8%9A%81%E9%9B%86%E5%9B%A2%E7%AE%97%E6%B3%95%E5%B2%97%E7%AC%94%E8%AF%95/</id>
+    <published>2022-09-15T14:45:05.000Z</published>
+    <updated>2022-09-15T14:29:08.535Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;2022.9.15日，蚂蚁计算算法岗笔试，我投递的岗位是算法工程师-机器学习岗位，考试时长90mins，题型为6道单选题，6道多选题和3道编程题，单选题主要是一些智力测试和脑筋急转弯，包含简单的CS知识例如最小生成树，最大堆插入、删除、排序复杂度等；多选题主要是机器学习和深度学习相关的知识，例如如何避免过拟合，原型聚类都有哪些，门控单元（GRU）等。&lt;/p&gt;</summary>
+    
+    
+    
+    
+    <category term="算法笔试" scheme="https://anobiity.github.io/tags/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AF%95/"/>
+    
+  </entry>
   
   <entry>
     <title>操作系统笔记（4）- 进程间通信</title>

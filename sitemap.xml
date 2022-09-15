@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://anobiity.github.io/2022/09/15/9-15%E8%9A%82%E8%9A%81%E9%9B%86%E5%9B%A2%E7%AE%97%E6%B3%95%E5%B2%97%E7%AC%94%E8%AF%95/</loc>
+    
+    <lastmod>2022-09-15</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://anobiity.github.io/2022/09/11/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%AC%94%E8%AE%B0-%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E4%BF%A1%E4%B8%8E%E8%B0%83%E5%BA%A6/</loc>
     
     <lastmod>2022-09-13</lastmod>
@@ -85,7 +94,7 @@
 
   <url>
     <loc>https://anobiity.github.io/</loc>
-    <lastmod>2022-09-14</lastmod>
+    <lastmod>2022-09-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -93,7 +102,14 @@
   
   <url>
     <loc>https://anobiity.github.io/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</loc>
-    <lastmod>2022-09-14</lastmod>
+    <lastmod>2022-09-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://anobiity.github.io/tags/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AF%95/</loc>
+    <lastmod>2022-09-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
