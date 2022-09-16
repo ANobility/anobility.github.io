@@ -364,7 +364,7 @@
     <title>牛客面试必刷TOP101</title>
     <url>/2022/09/15/%E7%89%9B%E5%AE%A2%E9%9D%A2%E8%AF%95%E5%BF%85%E5%88%B7TOP101/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h1><h2 id="BM65最长公共子序列-二"><a href="#BM65最长公共子序列-二" class="headerlink" title="BM65最长公共子序列(二)"></a>BM65最长公共子序列(二)</h2><p><a href="https://www.nowcoder.com/practice/6d29638c85bb4ffd80c020fe244baf11?tpId=295&amp;tags=&amp;title=&amp;difficulty=0&amp;judgeStatus=0&amp;rp=0&amp;sourceUrl=%2Fexam%2Foj">最长公共子序列(二)</a><br><span id="more"></span><br><strong>描述</strong><br>给定两个字符串str1和str2，输出两个字符串的最长公共子序列。如果最长公共子序列为空，则返回”-1”。目前给出的数据，仅仅会存在一个最长的公共子序列</p>
-<p>数据范围：$0 \le |str1|,|str2| \le 20000≤∣str1∣,∣str2∣≤2000$<br>要求：空间复杂度 $O(n^2)$ ，时间复杂度 $O(n^2)$.</p>
+<p>数据范围：$0 \le |str1|,|str2| \le 20000$<br>要求：空间复杂度 $O(n^2)$ ，时间复杂度 $O(n^2)$.</p>
 <blockquote>
 <p>输入: “1A2C3D4B56”,”B1D23A456A”<br>返回值: “123456”</p>
 <p>输入: “abc”,”def”<br>返回值: “-1”</p>
@@ -383,7 +383,7 @@
 <p>解决方法：可以修改递归深度的值，让它变大大一点，在代码开头加入<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> sys   </span><br><span class="line">sys.setrecursionlimit(<span class="number">100000</span>)</span><br></pre></td></tr></table></figure></p>
 <h1 id="二叉树"><a href="#二叉树" class="headerlink" title="二叉树"></a>二叉树</h1><h2 id="BM23-二叉树的前序遍历"><a href="#BM23-二叉树的前序遍历" class="headerlink" title="BM23 二叉树的前序遍历"></a>BM23 二叉树的前序遍历</h2><p><a href="https://www.nowcoder.com/practice/5e2135f4d2b14eb8a5b06fab4c938635?tpId=295&amp;tqId=2291302&amp;ru=/exam/oj&amp;qru=/ta/format-top101/question-ranking&amp;sourceUrl=%2Fexam%2Foj%3Fpage%3D1%26tab%3D%25E7%25AE%2597%25E6%25B3%2595%25E7%25AF%2587%26topicId%3D295">二叉树的前序遍历</a></p>
 <p><strong>描述</strong><br>给你二叉树的根节点 root ，返回它节点值的 前序 遍历。</p>
-<p>数据范围：二叉树的节点数量满足 $0 \le n \le 100 \0≤n≤100  $，二叉树节点的值满足 $1 \le val \le 100 \1≤val≤100 $ ，树的各节点的值各不相同<br><img src="https://uploadfiles.nowcoder.com/images/20211111/392807_1636599059575/FE67E09E9BA5661A7AB9DF9638FB1FAC" alt=""></p>
+<p>数据范围：二叉树的节点数量满足 $0 \le n \le 100   $，二叉树节点的值满足 $1 \le val \le 100  $ ，树的各节点的值各不相同<br><img src="https://uploadfiles.nowcoder.com/images/20211111/392807_1636599059575/FE67E09E9BA5661A7AB9DF9638FB1FAC" alt=""></p>
 <blockquote>
 <p>输入：{1,#,2,3}<br>返回值：[1,2,3]</p>
 </blockquote>
