@@ -398,7 +398,7 @@
 <p><strong>思路</strong><br>将左右子树分别遍历完成再添加中间节点</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">helper</span>(<span class="params">self,alist,root</span>):</span><br><span class="line">        <span class="keyword">if</span> root == <span class="literal">None</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        self.helper(alist,root.left)</span><br><span class="line">        self.helper(alist,root.right)</span><br><span class="line">        alist.append(root.val)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">postorderTraversal</span>(<span class="params">self , root: TreeNode</span>) -&gt; <span class="type">List</span>[<span class="built_in">int</span>]:</span><br><span class="line">        <span class="comment"># write code here</span></span><br><span class="line">        <span class="keyword">if</span> root == <span class="literal">None</span>:</span><br><span class="line">            <span class="keyword">return</span> []</span><br><span class="line">        alist = []</span><br><span class="line">        self.helper(alist,root)</span><br><span class="line">        <span class="keyword">return</span> alist</span><br></pre></td></tr></table></figure>]]></content>
       <tags>
-        <tag>算法面试</tag>
+        <tag>算法笔试</tag>
       </tags>
   </entry>
 </search>
