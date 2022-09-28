@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://anobiity.github.io/2022/09/11/cao-zuo-xi-tong-bi-ji-jin-cheng-jian-tong-xin/</loc>
+    
+    <lastmod>2022-09-28</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://anobiity.github.io/2022/09/28/cao-zuo-xi-tong-bi-ji-jin-cheng-diao-du/</loc>
     
     <lastmod>2022-09-28</lastmod>
@@ -23,15 +32,6 @@
     <loc>https://anobiity.github.io/2022/09/15/9-15-ma-yi-ji-tuan-suan-fa-gang-bi-shi/</loc>
     
     <lastmod>2022-09-15</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://anobiity.github.io/2022/09/11/cao-zuo-xi-tong-bi-ji-jin-cheng-jian-tong-xin/</loc>
-    
-    <lastmod>2022-09-13</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -95,15 +95,6 @@
     <loc>https://anobiity.github.io/categories/index.html</loc>
     
     <lastmod>2022-08-23</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://anobiity.github.io/2022/08/22/hello-world/</loc>
-    
-    <lastmod>2022-08-22</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
