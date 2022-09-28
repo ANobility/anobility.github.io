@@ -71,13 +71,13 @@
   
   <entry>
     <title>操作系统笔记（4）- 进程间通信</title>
-    <link href="https://anobiity.github.io/2022/09/11/cao-zuo-xi-tong-bi-ji-jin-cheng-jian-tong-xin-yu-diao-du/"/>
-    <id>https://anobiity.github.io/2022/09/11/cao-zuo-xi-tong-bi-ji-jin-cheng-jian-tong-xin-yu-diao-du/</id>
+    <link href="https://anobiity.github.io/2022/09/11/cao-zuo-xi-tong-bi-ji-jin-cheng-jian-tong-xin/"/>
+    <id>https://anobiity.github.io/2022/09/11/cao-zuo-xi-tong-bi-ji-jin-cheng-jian-tong-xin/</id>
     <published>2022-09-10T23:32:35.000Z</published>
     <updated>2022-09-13T19:18:27.035Z</updated>
     
     
-    <summary type="html">&lt;h1 id=&quot;进程间通信&quot;&gt;&lt;a href=&quot;#进程间通信&quot; class=&quot;headerlink&quot; title=&quot;进程间通信&quot;&gt;&lt;/a&gt;进程间通信&lt;/h1&gt;&lt;p&gt;进程是需要频繁的和其他进程进行交流的。例如，在一个 shell 管道中，第一个进程的输出必须传递给第二个进程，这样沿着管道进行下去。因此，进程之间如果需要通信的话，必须要使用一种良好的数据结构以至于不能被中断。下面我们会一起讨论有关 进程间通信(Inter Process Communication, IPC) 的问题。&lt;/p&gt;</summary>
+    <summary type="html">&lt;h1 id=&quot;进程间通信&quot;&gt;&lt;a href=&quot;#进程间通信&quot; class=&quot;headerlink&quot; title=&quot;进程间通信&quot;&gt;&lt;/a&gt;进程间通信&lt;/h1&gt;&lt;p&gt;进程是需要频繁的和其他进程进行交流的。例如，在一个 shell 管道中，第一个进程的输出必须传递给第二个进程，这样沿着管道进行下去。因此，进程之间如果需要通信的话，必须要使用一种良好的数据结构以至于不能被中断。下面我们会一起讨论有关 进程间通信(Inter Process Communication, IPC) 的问题。&lt;br&gt;</summary>
     
     
     
