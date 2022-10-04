@@ -6,7 +6,7 @@
   <link href="https://anobiity.github.io/atom.xml" rel="self"/>
   
   <link href="https://anobiity.github.io/"/>
-  <updated>2022-09-28T15:30:45.152Z</updated>
+  <updated>2022-10-04T09:45:11.702Z</updated>
   <id>https://anobiity.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://anobiity.github.io/2022/09/28/cao-zuo-xi-tong-bi-ji-jin-cheng-diao-du/"/>
     <id>https://anobiity.github.io/2022/09/28/cao-zuo-xi-tong-bi-ji-jin-cheng-diao-du/</id>
     <published>2022-09-28T15:07:41.000Z</published>
-    <updated>2022-09-28T15:30:45.152Z</updated>
+    <updated>2022-10-04T09:45:11.702Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;进程间调度&quot;&gt;&lt;a href=&quot;#进程间调度&quot; class=&quot;headerlink&quot; title=&quot;进程间调度&quot;&gt;&lt;/a&gt;进程间调度&lt;/h1&gt;&lt;p&gt;当一个计算机是多道程序设计系统时，会频繁的有很多进程或者线程来同时竞争CPU时间片。当两个或两个以上的进程/线程处于就绪状态时，就会发生这种情况。如果只有一个CPU可用，那么必须选择接下来哪个进程/线程可以运行。操作系统中有一个叫做调度程序(scheduler)的角色存在，它就是做这件事儿的，该程序使用的算法叫做调度算法(scheduling algorithm) 。&lt;br&gt;</summary>
@@ -38,7 +38,7 @@
     <link href="https://anobiity.github.io/2022/09/15/niu-ke-mian-shi-bi-shua-top101/"/>
     <id>https://anobiity.github.io/2022/09/15/niu-ke-mian-shi-bi-shua-top101/</id>
     <published>2022-09-15T17:12:46.000Z</published>
-    <updated>2022-10-04T09:07:53.404Z</updated>
+    <updated>2022-10-04T09:45:08.410Z</updated>
     
     
     <summary type="html">&lt;p&gt;本笔记为newcoder面试必刷TOP101的解题思路，笔者能力有限，内容仅供参考。&lt;/p&gt;
