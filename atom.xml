@@ -3,11 +3,11 @@
   <title>Weber&#39;s island</title>
   
   
-  <link href="https://anobiity.github.io/atom.xml" rel="self"/>
+  <link href="https://weberblog.top/atom.xml" rel="self"/>
   
-  <link href="https://anobiity.github.io/"/>
-  <updated>2022-10-04T09:45:11.702Z</updated>
-  <id>https://anobiity.github.io/</id>
+  <link href="https://weberblog.top/"/>
+  <updated>2022-10-15T13:15:33.520Z</updated>
+  <id>https://weberblog.top/</id>
   
   <author>
     <name>Weber</name>
@@ -17,9 +17,32 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>操作系统笔记(6) - 内存管理-1</title>
+    <link href="https://weberblog.top/2022/10/16/cao-zuo-xi-tong-bi-ji-nei-cun-guan-li-1/"/>
+    <id>https://weberblog.top/2022/10/16/cao-zuo-xi-tong-bi-ji-nei-cun-guan-li-1/</id>
+    <published>2022-10-15T21:12:20.000Z</published>
+    <updated>2022-10-15T13:15:33.520Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="操作系统" scheme="https://weberblog.top/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    
+  </entry>
+  
+  <entry>
     <title>操作系统笔记（5）- 进程间调度</title>
-    <link href="https://anobiity.github.io/2022/09/28/cao-zuo-xi-tong-bi-ji-jin-cheng-diao-du/"/>
-    <id>https://anobiity.github.io/2022/09/28/cao-zuo-xi-tong-bi-ji-jin-cheng-diao-du/</id>
+    <link href="https://weberblog.top/2022/09/28/cao-zuo-xi-tong-bi-ji-jin-cheng-diao-du/"/>
+    <id>https://weberblog.top/2022/09/28/cao-zuo-xi-tong-bi-ji-jin-cheng-diao-du/</id>
     <published>2022-09-28T15:07:41.000Z</published>
     <updated>2022-10-04T09:45:11.702Z</updated>
     
@@ -29,14 +52,14 @@
     
     
     
-    <category term="操作系统" scheme="https://anobiity.github.io/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    <category term="操作系统" scheme="https://weberblog.top/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
     
   </entry>
   
   <entry>
     <title>牛客面试必刷TOP101</title>
-    <link href="https://anobiity.github.io/2022/09/15/niu-ke-mian-shi-bi-shua-top101/"/>
-    <id>https://anobiity.github.io/2022/09/15/niu-ke-mian-shi-bi-shua-top101/</id>
+    <link href="https://weberblog.top/2022/09/16/niu-ke-mian-shi-bi-shua-top101/"/>
+    <id>https://weberblog.top/2022/09/16/niu-ke-mian-shi-bi-shua-top101/</id>
     <published>2022-09-15T17:12:46.000Z</published>
     <updated>2022-10-04T09:45:08.410Z</updated>
     
@@ -48,14 +71,14 @@
     
     
     
-    <category term="算法笔试" scheme="https://anobiity.github.io/tags/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AF%95/"/>
+    <category term="算法笔试" scheme="https://weberblog.top/tags/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AF%95/"/>
     
   </entry>
   
   <entry>
     <title>9.15蚂蚁集团算法岗笔试</title>
-    <link href="https://anobiity.github.io/2022/09/15/9-15-ma-yi-ji-tuan-suan-fa-gang-bi-shi/"/>
-    <id>https://anobiity.github.io/2022/09/15/9-15-ma-yi-ji-tuan-suan-fa-gang-bi-shi/</id>
+    <link href="https://weberblog.top/2022/09/15/9-15-ma-yi-ji-tuan-suan-fa-gang-bi-shi/"/>
+    <id>https://weberblog.top/2022/09/15/9-15-ma-yi-ji-tuan-suan-fa-gang-bi-shi/</id>
     <published>2022-09-15T14:45:05.000Z</published>
     <updated>2022-09-15T14:29:08.535Z</updated>
     
@@ -65,14 +88,14 @@
     
     
     
-    <category term="算法笔试" scheme="https://anobiity.github.io/tags/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AF%95/"/>
+    <category term="算法笔试" scheme="https://weberblog.top/tags/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AF%95/"/>
     
   </entry>
   
   <entry>
     <title>操作系统笔记（4）- 进程间通信</title>
-    <link href="https://anobiity.github.io/2022/09/11/cao-zuo-xi-tong-bi-ji-jin-cheng-jian-tong-xin/"/>
-    <id>https://anobiity.github.io/2022/09/11/cao-zuo-xi-tong-bi-ji-jin-cheng-jian-tong-xin/</id>
+    <link href="https://weberblog.top/2022/09/11/cao-zuo-xi-tong-bi-ji-jin-cheng-jian-tong-xin/"/>
+    <id>https://weberblog.top/2022/09/11/cao-zuo-xi-tong-bi-ji-jin-cheng-jian-tong-xin/</id>
     <published>2022-09-10T23:32:35.000Z</published>
     <updated>2022-09-28T15:35:30.860Z</updated>
     
@@ -82,14 +105,14 @@
     
     
     
-    <category term="操作系统" scheme="https://anobiity.github.io/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    <category term="操作系统" scheme="https://weberblog.top/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
     
   </entry>
   
   <entry>
     <title>操作系统笔记（3）- 进程和线程</title>
-    <link href="https://anobiity.github.io/2022/09/01/cao-zuo-xi-tong-bi-ji-jin-cheng-he-xian-cheng/"/>
-    <id>https://anobiity.github.io/2022/09/01/cao-zuo-xi-tong-bi-ji-jin-cheng-he-xian-cheng/</id>
+    <link href="https://weberblog.top/2022/09/01/cao-zuo-xi-tong-bi-ji-jin-cheng-he-xian-cheng/"/>
+    <id>https://weberblog.top/2022/09/01/cao-zuo-xi-tong-bi-ji-jin-cheng-he-xian-cheng/</id>
     <published>2022-08-31T21:07:53.000Z</published>
     <updated>2022-09-10T21:27:37.665Z</updated>
     
@@ -99,14 +122,14 @@
     
     
     
-    <category term="操作系统" scheme="https://anobiity.github.io/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    <category term="操作系统" scheme="https://weberblog.top/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
     
   </entry>
   
   <entry>
     <title>操作系统笔记（2）- 操作系统概念与结构</title>
-    <link href="https://anobiity.github.io/2022/08/24/cao-zuo-xi-tong-bi-ji-cao-zuo-xi-tong-gai-nian-yu-jie-gou/"/>
-    <id>https://anobiity.github.io/2022/08/24/cao-zuo-xi-tong-bi-ji-cao-zuo-xi-tong-gai-nian-yu-jie-gou/</id>
+    <link href="https://weberblog.top/2022/08/25/cao-zuo-xi-tong-bi-ji-cao-zuo-xi-tong-gai-nian-yu-jie-gou/"/>
+    <id>https://weberblog.top/2022/08/25/cao-zuo-xi-tong-bi-ji-cao-zuo-xi-tong-gai-nian-yu-jie-gou/</id>
     <published>2022-08-24T16:01:13.000Z</published>
     <updated>2022-08-31T20:00:58.913Z</updated>
     
@@ -118,14 +141,14 @@
     
     
     
-    <category term="操作系统" scheme="https://anobiity.github.io/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    <category term="操作系统" scheme="https://weberblog.top/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
     
   </entry>
   
   <entry>
     <title>操作系统笔记（1）- 计算机硬件介绍</title>
-    <link href="https://anobiity.github.io/2022/08/23/cao-zuo-xi-tong-bi-ji-ying-jian-jie-shao/"/>
-    <id>https://anobiity.github.io/2022/08/23/cao-zuo-xi-tong-bi-ji-ying-jian-jie-shao/</id>
+    <link href="https://weberblog.top/2022/08/24/cao-zuo-xi-tong-bi-ji-ying-jian-jie-shao/"/>
+    <id>https://weberblog.top/2022/08/24/cao-zuo-xi-tong-bi-ji-ying-jian-jie-shao/</id>
     <published>2022-08-23T17:56:38.000Z</published>
     <updated>2022-08-30T14:51:11.804Z</updated>
     
@@ -139,7 +162,7 @@
     
     
     
-    <category term="操作系统" scheme="https://anobiity.github.io/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    <category term="操作系统" scheme="https://weberblog.top/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
     
   </entry>
   
