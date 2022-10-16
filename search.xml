@@ -489,7 +489,7 @@
       </tags>
   </entry>
   <entry>
-    <title>操作系统笔记(6) - 内存管理-1</title>
+    <title>操作系统笔记（6）- 内存管理-1</title>
     <url>/2022/10/16/cao-zuo-xi-tong-bi-ji-nei-cun-guan-li-1/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><meta name="referrer" content="no-referrer"/></p>
 <h1 id="内存管理"><a href="#内存管理" class="headerlink" title="内存管理"></a>内存管理</h1><p><img src="https://pic.leetcode-cn.com/1612665297-yVOICs-os3-0.png" alt=""><br>主存(RAM) 是一件非常重要的资源，必须要认真对待内存。不管存储器有多大，程序大小的增长速度比内存容量的增长速度要快的多。下面我们就来探讨一下操作系统是如何创建内存并管理他们的。</p>
