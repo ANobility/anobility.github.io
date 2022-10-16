@@ -12,7 +12,7 @@
         content="width=device-width, initial-scale=1, maximum-scale=1"
       />
       <meta name="baidu-site-verification" content="code-bCi2SAvuDT" />
-      <title>操作系统笔记（6）- 内存管理-1 |  Weber&#39;s island</title>
+      <title>操作系统笔记（6）- 内存管理 上 |  Weber&#39;s island</title>
   <meta name="generator" content="hexo-theme-ayer">
       
       <link rel="shortcut icon" href="/favicon.ico" />
@@ -66,7 +66,7 @@
     <header class="article-header">
        
 <h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  操作系统笔记（6）- 内存管理-1
+  操作系统笔记（6）- 内存管理 上
 </h1>
  
 
@@ -108,6 +108,7 @@
        
   <p><meta name="referrer" content="no-referrer"/></p>
 <h1 id="内存管理"><a href="#内存管理" class="headerlink" title="内存管理"></a>内存管理</h1><p><img src="https://pic.leetcode-cn.com/1612665297-yVOICs-os3-0.png" alt=""><br>主存(RAM) 是一件非常重要的资源，必须要认真对待内存。不管存储器有多大，程序大小的增长速度比内存容量的增长速度要快的多。下面我们就来探讨一下操作系统是如何创建内存并管理他们的。</p>
+<span id="more"></span>
 <p>经过多年的研究发现，科学家提出了一种 分层存储器体系(memory hierarchy)，下面是分层体系的分类:<br><img src="https://pic.leetcode-cn.com/1612665300-EydqrQ-os3-1.png" alt=""><br>位于顶层的存储器速度最快，但是相对容量最小，成本非常高。层级结构向下，其访问速度会变慢，但是容量会变大，相对造价也就越便宜。</p>
 <p>操作系统中管理内存层次结构的部分称为内存管理器(memory manager)，它的主要工作是有效的管理内存，记录哪些内存是正在使用的，在进程需要时分配内存以及在进程完成时回收内存。所有现代操作系统都提供内存管理。</p>
 <p>下面我们会对不同的内存管理模型进行探讨，从简单到复杂，由于最低级别的缓存是由硬件进行管理的，所以我们主要探讨主存模型和如何对主存进行管理。</p>
@@ -175,7 +176,7 @@
     <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://weberblog.top/2022/10/16/cao-zuo-xi-tong-bi-ji-nei-cun-guan-li-1/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://weberblog.top/2022/10/16/cao-zuo-xi-tong-bi-ji-nei-cun-guan-li-1/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -198,15 +199,33 @@
 
   
    
-    
-    <script src="https://cdn.staticfile.org/twikoo/1.4.18/twikoo.all.min.js"></script>
-    <div id="twikoo" class="twikoo"></div>
-    <script>
-        twikoo.init({
-            envId: ""
-        })
-    </script>
- 
+<div class="gitalk" id="gitalk-container"></div>
+
+<link rel="stylesheet" href="https://cdn.staticfile.org/gitalk/1.7.2/gitalk.min.css">
+
+
+<script src="https://cdn.staticfile.org/gitalk/1.7.2/gitalk.min.js"></script>
+
+
+<script src="https://cdn.staticfile.org/blueimp-md5/2.19.0/js/md5.min.js"></script>
+
+<script type="text/javascript">
+  var gitalk = new Gitalk({
+    clientID: '815b62b4d756403363df',
+    clientSecret: '100f776cb8ace67ebce9661cfefccbc5034b2fb4',
+    repo: 'anobility.github.io',
+    owner: 'anobility',
+    admin: ['anobility'],
+    // id: location.pathname,      // Ensure uniqueness and length less than 50
+    id: md5(location.pathname),
+    distractionFreeMode: false,  // Facebook-like distraction free mode
+    pagerDirection: 'last'
+  })
+
+  gitalk.render('gitalk-container')
+</script>
+
+     
 </article>
 
 </section>

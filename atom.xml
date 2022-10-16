@@ -3,11 +3,11 @@
   <title>Weber&#39;s island</title>
   
   
-  <link href="https://weberblog.top/atom.xml" rel="self"/>
+  <link href="http://weberblog.top/atom.xml" rel="self"/>
   
-  <link href="https://weberblog.top/"/>
-  <updated>2022-10-16T08:41:33.295Z</updated>
-  <id>https://weberblog.top/</id>
+  <link href="http://weberblog.top/"/>
+  <updated>2022-10-16T08:44:47.960Z</updated>
+  <id>http://weberblog.top/</id>
   
   <author>
     <name>Weber</name>
@@ -17,32 +17,27 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>操作系统笔记（6）- 内存管理-1</title>
-    <link href="https://weberblog.top/2022/10/16/cao-zuo-xi-tong-bi-ji-nei-cun-guan-li-1/"/>
-    <id>https://weberblog.top/2022/10/16/cao-zuo-xi-tong-bi-ji-nei-cun-guan-li-1/</id>
+    <title>操作系统笔记（6）- 内存管理 上</title>
+    <link href="http://weberblog.top/2022/10/16/cao-zuo-xi-tong-bi-ji-nei-cun-guan-li-1/"/>
+    <id>http://weberblog.top/2022/10/16/cao-zuo-xi-tong-bi-ji-nei-cun-guan-li-1/</id>
     <published>2022-10-15T21:12:20.000Z</published>
-    <updated>2022-10-16T08:41:33.295Z</updated>
+    <updated>2022-10-16T08:44:47.960Z</updated>
     
     
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot;</summary>
-        
-      
+    <summary type="html">&lt;p&gt;&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;/&gt;&lt;/p&gt;
+&lt;h1 id=&quot;内存管理&quot;&gt;&lt;a href=&quot;#内存管理&quot; class=&quot;headerlink&quot; title=&quot;内存管理&quot;&gt;&lt;/a&gt;内存管理&lt;/h1&gt;&lt;p&gt;&lt;img src=&quot;https://pic.leetcode-cn.com/1612665297-yVOICs-os3-0.png&quot; alt=&quot;&quot;&gt;&lt;br&gt;主存(RAM) 是一件非常重要的资源，必须要认真对待内存。不管存储器有多大，程序大小的增长速度比内存容量的增长速度要快的多。下面我们就来探讨一下操作系统是如何创建内存并管理他们的。&lt;/p&gt;</summary>
     
     
     
     
-    <category term="操作系统" scheme="https://weberblog.top/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    <category term="操作系统" scheme="http://weberblog.top/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
     
   </entry>
   
   <entry>
     <title>操作系统笔记（5）- 进程间调度</title>
-    <link href="https://weberblog.top/2022/09/28/cao-zuo-xi-tong-bi-ji-jin-cheng-diao-du/"/>
-    <id>https://weberblog.top/2022/09/28/cao-zuo-xi-tong-bi-ji-jin-cheng-diao-du/</id>
+    <link href="http://weberblog.top/2022/09/28/cao-zuo-xi-tong-bi-ji-jin-cheng-diao-du/"/>
+    <id>http://weberblog.top/2022/09/28/cao-zuo-xi-tong-bi-ji-jin-cheng-diao-du/</id>
     <published>2022-09-28T15:07:41.000Z</published>
     <updated>2022-10-16T08:40:24.182Z</updated>
     
@@ -53,14 +48,14 @@
     
     
     
-    <category term="操作系统" scheme="https://weberblog.top/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    <category term="操作系统" scheme="http://weberblog.top/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
     
   </entry>
   
   <entry>
     <title>牛客面试必刷TOP101</title>
-    <link href="https://weberblog.top/2022/09/16/niu-ke-mian-shi-bi-shua-top101/"/>
-    <id>https://weberblog.top/2022/09/16/niu-ke-mian-shi-bi-shua-top101/</id>
+    <link href="http://weberblog.top/2022/09/16/niu-ke-mian-shi-bi-shua-top101/"/>
+    <id>http://weberblog.top/2022/09/16/niu-ke-mian-shi-bi-shua-top101/</id>
     <published>2022-09-15T17:12:46.000Z</published>
     <updated>2022-10-16T08:40:22.617Z</updated>
     
@@ -72,14 +67,14 @@
     
     
     
-    <category term="算法笔试" scheme="https://weberblog.top/tags/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AF%95/"/>
+    <category term="算法笔试" scheme="http://weberblog.top/tags/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AF%95/"/>
     
   </entry>
   
   <entry>
     <title>9.15蚂蚁集团算法岗笔试</title>
-    <link href="https://weberblog.top/2022/09/15/9-15-ma-yi-ji-tuan-suan-fa-gang-bi-shi/"/>
-    <id>https://weberblog.top/2022/09/15/9-15-ma-yi-ji-tuan-suan-fa-gang-bi-shi/</id>
+    <link href="http://weberblog.top/2022/09/15/9-15-ma-yi-ji-tuan-suan-fa-gang-bi-shi/"/>
+    <id>http://weberblog.top/2022/09/15/9-15-ma-yi-ji-tuan-suan-fa-gang-bi-shi/</id>
     <published>2022-09-15T14:45:05.000Z</published>
     <updated>2022-10-16T08:40:27.140Z</updated>
     
@@ -89,32 +84,33 @@
     
     
     
-    <category term="算法笔试" scheme="https://weberblog.top/tags/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AF%95/"/>
+    <category term="算法笔试" scheme="http://weberblog.top/tags/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AF%95/"/>
     
   </entry>
   
   <entry>
     <title>操作系统笔记（4）- 进程间通信</title>
-    <link href="https://weberblog.top/2022/09/11/cao-zuo-xi-tong-bi-ji-jin-cheng-jian-tong-xin/"/>
-    <id>https://weberblog.top/2022/09/11/cao-zuo-xi-tong-bi-ji-jin-cheng-jian-tong-xin/</id>
+    <link href="http://weberblog.top/2022/09/11/cao-zuo-xi-tong-bi-ji-jin-cheng-jian-tong-xin/"/>
+    <id>http://weberblog.top/2022/09/11/cao-zuo-xi-tong-bi-ji-jin-cheng-jian-tong-xin/</id>
     <published>2022-09-10T23:32:35.000Z</published>
-    <updated>2022-10-16T08:40:33.539Z</updated>
+    <updated>2022-10-16T09:15:34.901Z</updated>
     
     
-    <summary type="html">&lt;p&gt;&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;/&gt;&lt;/p&gt;
+    <summary type="html">&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;/&gt;
+
 &lt;h1 id=&quot;进程间通信&quot;&gt;&lt;a href=&quot;#进程间通信&quot; class=&quot;headerlink&quot; title=&quot;进程间通信&quot;&gt;&lt;/a&gt;进程间通信&lt;/h1&gt;&lt;p&gt;进程是需要频繁的和其他进程进行交流的。例如，在一个 shell 管道中，第一个进程的输出必须传递给第二个进程，这样沿着管道进行下去。因此，进程之间如果需要通信的话，必须要使用一种良好的数据结构以至于不能被中断。下面我们会一起讨论有关 进程间通信(Inter Process Communication, IPC) 的问题。&lt;br&gt;</summary>
     
     
     
     
-    <category term="操作系统" scheme="https://weberblog.top/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    <category term="操作系统" scheme="http://weberblog.top/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
     
   </entry>
   
   <entry>
     <title>操作系统笔记（3）- 进程和线程</title>
-    <link href="https://weberblog.top/2022/09/01/cao-zuo-xi-tong-bi-ji-jin-cheng-he-xian-cheng/"/>
-    <id>https://weberblog.top/2022/09/01/cao-zuo-xi-tong-bi-ji-jin-cheng-he-xian-cheng/</id>
+    <link href="http://weberblog.top/2022/09/01/cao-zuo-xi-tong-bi-ji-jin-cheng-he-xian-cheng/"/>
+    <id>http://weberblog.top/2022/09/01/cao-zuo-xi-tong-bi-ji-jin-cheng-he-xian-cheng/</id>
     <published>2022-08-31T21:07:53.000Z</published>
     <updated>2022-10-16T08:40:36.898Z</updated>
     
@@ -125,14 +121,14 @@
     
     
     
-    <category term="操作系统" scheme="https://weberblog.top/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    <category term="操作系统" scheme="http://weberblog.top/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
     
   </entry>
   
   <entry>
     <title>操作系统笔记（2）- 操作系统概念与结构</title>
-    <link href="https://weberblog.top/2022/08/25/cao-zuo-xi-tong-bi-ji-cao-zuo-xi-tong-gai-nian-yu-jie-gou/"/>
-    <id>https://weberblog.top/2022/08/25/cao-zuo-xi-tong-bi-ji-cao-zuo-xi-tong-gai-nian-yu-jie-gou/</id>
+    <link href="http://weberblog.top/2022/08/25/cao-zuo-xi-tong-bi-ji-cao-zuo-xi-tong-gai-nian-yu-jie-gou/"/>
+    <id>http://weberblog.top/2022/08/25/cao-zuo-xi-tong-bi-ji-cao-zuo-xi-tong-gai-nian-yu-jie-gou/</id>
     <published>2022-08-24T16:01:13.000Z</published>
     <updated>2022-10-16T08:40:28.285Z</updated>
     
@@ -145,14 +141,14 @@
     
     
     
-    <category term="操作系统" scheme="https://weberblog.top/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    <category term="操作系统" scheme="http://weberblog.top/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
     
   </entry>
   
   <entry>
     <title>操作系统笔记（1）- 计算机硬件介绍</title>
-    <link href="https://weberblog.top/2022/08/24/cao-zuo-xi-tong-bi-ji-ying-jian-jie-shao/"/>
-    <id>https://weberblog.top/2022/08/24/cao-zuo-xi-tong-bi-ji-ying-jian-jie-shao/</id>
+    <link href="http://weberblog.top/2022/08/24/cao-zuo-xi-tong-bi-ji-ying-jian-jie-shao/"/>
+    <id>http://weberblog.top/2022/08/24/cao-zuo-xi-tong-bi-ji-ying-jian-jie-shao/</id>
     <published>2022-08-23T17:56:38.000Z</published>
     <updated>2022-10-16T08:31:02.405Z</updated>
     
@@ -168,7 +164,7 @@
     
     
     
-    <category term="操作系统" scheme="https://weberblog.top/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    <category term="操作系统" scheme="http://weberblog.top/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
     
   </entry>
   

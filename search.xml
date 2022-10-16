@@ -426,7 +426,8 @@
   <entry>
     <title>操作系统笔记（4）- 进程间通信</title>
     <url>/2022/09/11/cao-zuo-xi-tong-bi-ji-jin-cheng-jian-tong-xin/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><meta name="referrer" content="no-referrer"/></p>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><meta name="referrer" content="no-referrer"/>
+
 <h1 id="进程间通信"><a href="#进程间通信" class="headerlink" title="进程间通信"></a>进程间通信</h1><p>进程是需要频繁的和其他进程进行交流的。例如，在一个 shell 管道中，第一个进程的输出必须传递给第二个进程，这样沿着管道进行下去。因此，进程之间如果需要通信的话，必须要使用一种良好的数据结构以至于不能被中断。下面我们会一起讨论有关 进程间通信(Inter Process Communication, IPC) 的问题。<br><span id="more"></span><br>关于进程间的通信，这里有三个问题</p>
 <p>上面提到了第一个问题，那就是一个进程如何传递消息给其他进程。<br>第二个问题是如何确保两个或多个进程之间不会相互干扰。例如，两个航空公司都试图为不同的顾客抢购飞机上的最后一个座位。<br>第三个问题是数据的先后顺序的问题，如果进程 A 产生数据并且进程 B 打印数据。则进程 B 打印数据之前需要先等 A 产生数据后才能够进行打印。<br>需要注意的是，这三个问题中的后面两个问题同样也适用于线程</p>
 <p>第一个问题在线程间比较好解决，因为它们共享一个地址空间，它们具有相同的运行时环境，可以想象你在用高级语言编写多线程代码的过程中，线程通信问题是不是比较容易解决？</p>
@@ -489,10 +490,11 @@
       </tags>
   </entry>
   <entry>
-    <title>操作系统笔记（6）- 内存管理-1</title>
+    <title>操作系统笔记（6）- 内存管理 上</title>
     <url>/2022/10/16/cao-zuo-xi-tong-bi-ji-nei-cun-guan-li-1/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><meta name="referrer" content="no-referrer"/></p>
 <h1 id="内存管理"><a href="#内存管理" class="headerlink" title="内存管理"></a>内存管理</h1><p><img src="https://pic.leetcode-cn.com/1612665297-yVOICs-os3-0.png" alt=""><br>主存(RAM) 是一件非常重要的资源，必须要认真对待内存。不管存储器有多大，程序大小的增长速度比内存容量的增长速度要快的多。下面我们就来探讨一下操作系统是如何创建内存并管理他们的。</p>
+<span id="more"></span>
 <p>经过多年的研究发现，科学家提出了一种 分层存储器体系(memory hierarchy)，下面是分层体系的分类:<br><img src="https://pic.leetcode-cn.com/1612665300-EydqrQ-os3-1.png" alt=""><br>位于顶层的存储器速度最快，但是相对容量最小，成本非常高。层级结构向下，其访问速度会变慢，但是容量会变大，相对造价也就越便宜。</p>
 <p>操作系统中管理内存层次结构的部分称为内存管理器(memory manager)，它的主要工作是有效的管理内存，记录哪些内存是正在使用的，在进程需要时分配内存以及在进程完成时回收内存。所有现代操作系统都提供内存管理。</p>
 <p>下面我们会对不同的内存管理模型进行探讨，从简单到复杂，由于最低级别的缓存是由硬件进行管理的，所以我们主要探讨主存模型和如何对主存进行管理。</p>
