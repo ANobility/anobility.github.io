@@ -197,11 +197,12 @@
       
     <div class="article-entry" itemprop="articleBody">
        
-  <h1 id="内存管理"><a href="#内存管理" class="headerlink" title="内存管理"></a>内存管理</h1><p><img src="https://pic.leetcode-cn.com/1612665297-yVOICs-os3-0.png" alt=""><br>主存(RAM) 是一件非常重要的资源，必须要认真对待内存。不管存储器有多大，程序大小的增长速度比内存容量的增长速度要快的多。下面我们就来探讨一下操作系统是如何创建内存并管理他们的。</p>
+  <p><meta name="referrer" content="no-referrer"/></p>
+<h1 id="内存管理"><a href="#内存管理" class="headerlink" title="内存管理"></a>内存管理</h1><p><img src="https://pic.leetcode-cn.com/1612665297-yVOICs-os3-0.png" alt=""><br>主存(RAM) 是一件非常重要的资源，必须要认真对待内存。不管存储器有多大，程序大小的增长速度比内存容量的增长速度要快的多。下面我们就来探讨一下操作系统是如何创建内存并管理他们的。</p>
 <p>经过多年的研究发现，科学家提出了一种 分层存储器体系(memory hierarchy)，下面是分层体系的分类:<br><img src="https://pic.leetcode-cn.com/1612665300-EydqrQ-os3-1.png" alt=""><br>位于顶层的存储器速度最快，但是相对容量最小，成本非常高。层级结构向下，其访问速度会变慢，但是容量会变大，相对造价也就越便宜。</p>
 <p>操作系统中管理内存层次结构的部分称为内存管理器(memory manager)，它的主要工作是有效的管理内存，记录哪些内存是正在使用的，在进程需要时分配内存以及在进程完成时回收内存。所有现代操作系统都提供内存管理。</p>
 <p>下面我们会对不同的内存管理模型进行探讨，从简单到复杂，由于最低级别的缓存是由硬件进行管理的，所以我们主要探讨主存模型和如何对主存进行管理。</p>
- 
+<h2 id="无存储抽象"><a href="#无存储抽象" class="headerlink" title="无存储抽象"></a>无存储抽象</h2> 
       <!-- reward -->
       
     </div>
@@ -249,7 +250,8 @@
       
     <div class="article-entry" itemprop="articleBody">
        
-  <h1 id="进程间调度"><a href="#进程间调度" class="headerlink" title="进程间调度"></a>进程间调度</h1><p>当一个计算机是多道程序设计系统时，会频繁的有很多进程或者线程来同时竞争CPU时间片。当两个或两个以上的进程/线程处于就绪状态时，就会发生这种情况。如果只有一个CPU可用，那么必须选择接下来哪个进程/线程可以运行。操作系统中有一个叫做调度程序(scheduler)的角色存在，它就是做这件事儿的，该程序使用的算法叫做调度算法(scheduling algorithm) 。<br> 
+  <p><meta name="referrer" content="no-referrer"/></p>
+<h1 id="进程间调度"><a href="#进程间调度" class="headerlink" title="进程间调度"></a>进程间调度</h1><p>当一个计算机是多道程序设计系统时，会频繁的有很多进程或者线程来同时竞争CPU时间片。当两个或两个以上的进程/线程处于就绪状态时，就会发生这种情况。如果只有一个CPU可用，那么必须选择接下来哪个进程/线程可以运行。操作系统中有一个叫做调度程序(scheduler)的角色存在，它就是做这件事儿的，该程序使用的算法叫做调度算法(scheduling algorithm) 。<br> 
       <a class="article-more-link" href="/2022/09/28/cao-zuo-xi-tong-bi-ji-jin-cheng-diao-du/"
         >阅读更多</a
       >
@@ -301,7 +303,7 @@
       
     <div class="article-entry" itemprop="articleBody">
        
-  <p>本笔记为newcoder面试必刷TOP101的解题思路，笔者能力有限，内容仅供参考。</p>
+  <p><meta name="referrer" content="no-referrer"/><br>本笔记为newcoder面试必刷TOP101的解题思路，笔者能力有限，内容仅供参考。</p>
 <p>本笔记将会包括算法和数据结构方向11个模块，动归、查找/排序、二叉树、链表、堆栈/队列、哈希、递归/回溯、字符串、双指针、贪心和模拟。</p>
 <p>本笔记尚未完结，不定期更新，详细情况请点击右下角阅读更多。<br> 
       <a class="article-more-link" href="/2022/09/16/niu-ke-mian-shi-bi-shua-top101/"
@@ -355,7 +357,7 @@
       
     <div class="article-entry" itemprop="articleBody">
        
-  <p>2022.9.15日，蚂蚁计算算法岗笔试，我投递的岗位是算法工程师-机器学习岗位，考试时长90mins，题型为6道单选题，6道多选题和3道编程题，单选题主要是一些智力测试和脑筋急转弯，包含简单的CS知识例如最小生成树，最大堆插入、删除、排序复杂度等；多选题主要是机器学习和深度学习相关的知识，例如如何避免过拟合，原型聚类都有哪些，门控单元（GRU）等。</p> 
+  <p><meta name="referrer" content="no-referrer"/><br>2022.9.15日，蚂蚁计算算法岗笔试，我投递的岗位是算法工程师-机器学习岗位，考试时长90mins，题型为6道单选题，6道多选题和3道编程题，单选题主要是一些智力测试和脑筋急转弯，包含简单的CS知识例如最小生成树，最大堆插入、删除、排序复杂度等；多选题主要是机器学习和深度学习相关的知识，例如如何避免过拟合，原型聚类都有哪些，门控单元（GRU）等。<br> 
       <a class="article-more-link" href="/2022/09/15/9-15-ma-yi-ji-tuan-suan-fa-gang-bi-shi/"
         >阅读更多</a
       >
@@ -407,7 +409,8 @@
       
     <div class="article-entry" itemprop="articleBody">
        
-  <h1 id="进程间通信"><a href="#进程间通信" class="headerlink" title="进程间通信"></a>进程间通信</h1><p>进程是需要频繁的和其他进程进行交流的。例如，在一个 shell 管道中，第一个进程的输出必须传递给第二个进程，这样沿着管道进行下去。因此，进程之间如果需要通信的话，必须要使用一种良好的数据结构以至于不能被中断。下面我们会一起讨论有关 进程间通信(Inter Process Communication, IPC) 的问题。<br> 
+  <p><meta name="referrer" content="no-referrer"/></p>
+<h1 id="进程间通信"><a href="#进程间通信" class="headerlink" title="进程间通信"></a>进程间通信</h1><p>进程是需要频繁的和其他进程进行交流的。例如，在一个 shell 管道中，第一个进程的输出必须传递给第二个进程，这样沿着管道进行下去。因此，进程之间如果需要通信的话，必须要使用一种良好的数据结构以至于不能被中断。下面我们会一起讨论有关 进程间通信(Inter Process Communication, IPC) 的问题。<br> 
       <a class="article-more-link" href="/2022/09/11/cao-zuo-xi-tong-bi-ji-jin-cheng-jian-tong-xin/"
         >阅读更多</a
       >
@@ -459,7 +462,8 @@
       
     <div class="article-entry" itemprop="articleBody">
        
-  <h1 id="进程和线程"><a href="#进程和线程" class="headerlink" title="进程和线程"></a>进程和线程</h1><p><img src="https://pic.leetcode-cn.com/1612664902-lwiEpk-os2-0.png"></p> 
+  <p><meta name="referrer" content="no-referrer"/></p>
+<h1 id="进程和线程"><a href="#进程和线程" class="headerlink" title="进程和线程"></a>进程和线程</h1><p><img src="https://pic.leetcode-cn.com/1612664902-lwiEpk-os2-0.png" alt=""><br> 
       <a class="article-more-link" href="/2022/09/01/cao-zuo-xi-tong-bi-ji-jin-cheng-he-xian-cheng/"
         >阅读更多</a
       >
@@ -511,9 +515,10 @@
       
     <div class="article-entry" itemprop="articleBody">
        
-  <h1 id="操作系统概念"><a href="#操作系统概念" class="headerlink" title="操作系统概念"></a>操作系统概念</h1><h2 id="进程"><a href="#进程" class="headerlink" title="进程"></a>进程</h2><p>进程：正在进行的一个过程或者说一个任务。而负责执行任务则是cpu。</p>
+  <p><meta name="referrer" content="no-referrer"/></p>
+<h1 id="操作系统概念"><a href="#操作系统概念" class="headerlink" title="操作系统概念"></a>操作系统概念</h1><h2 id="进程"><a href="#进程" class="headerlink" title="进程"></a>进程</h2><p>进程：正在进行的一个过程或者说一个任务。而负责执行任务则是cpu。</p>
 <p>系统中的程序可以按照顺序执行，也可以并发执行。其中在顺序执行的过程中主要的特点就是顺序性、封闭性和可再现性，而并发执行的程序，破坏了程序的封闭性和可再现性，使得程序和执行程序的活动不再一一对应，这就涉及到了进程之间的同步和互斥问题</p>
-<p>进程状态的描述有两种模型，一种是三态模型，另一种是五态模型，下边我们就分别介绍下这两种模型。</p> 
+<p>进程状态的描述有两种模型，一种是三态模型，另一种是五态模型，下边我们就分别介绍下这两种模型。<br> 
       <a class="article-more-link" href="/2022/08/25/cao-zuo-xi-tong-bi-ji-cao-zuo-xi-tong-gai-nian-yu-jie-gou/"
         >阅读更多</a
       >
@@ -947,23 +952,6 @@
     
 
   </div>
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-
-
 </body>
 
 </html>

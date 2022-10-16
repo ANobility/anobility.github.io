@@ -104,22 +104,16 @@
   
     <div class="article-entry" itemprop="articleBody">
        
-  <p>2022.9.15日，蚂蚁计算算法岗笔试，我投递的岗位是算法工程师-机器学习岗位，考试时长90mins，题型为6道单选题，6道多选题和3道编程题，单选题主要是一些智力测试和脑筋急转弯，包含简单的CS知识例如最小生成树，最大堆插入、删除、排序复杂度等；多选题主要是机器学习和深度学习相关的知识，例如如何避免过拟合，原型聚类都有哪些，门控单元（GRU）等。</p>
-<span id="more"></span>
-
+  <p><meta name="referrer" content="no-referrer"/><br>2022.9.15日，蚂蚁计算算法岗笔试，我投递的岗位是算法工程师-机器学习岗位，考试时长90mins，题型为6道单选题，6道多选题和3道编程题，单选题主要是一些智力测试和脑筋急转弯，包含简单的CS知识例如最小生成树，最大堆插入、删除、排序复杂度等；多选题主要是机器学习和深度学习相关的知识，例如如何避免过拟合，原型聚类都有哪些，门控单元（GRU）等。<br><span id="more"></span></p>
 <p>编程题只做了两道，第二道用时太多。<br>题型是这样的，给出一个int类型的序列，分别给出长度从1到n（为题目序列长度）长度连续上升子序列的个数。</p>
 <blockquote>
 <p>input：5<br>2 3 4 4 2</p>
-</blockquote>
-<blockquote>
 <p>output：5 2 1 0 0<br>5: [2] [3] [4] [4] [2]<br>2: [2,3] [3,4]<br>1: [2,3,4]</p>
 </blockquote>
 <p>我这里的思路是将这个序列从1到n分开考虑，当长度为1的连续上升子序列时，输出值为数组的个数，当长度为2的连续上升子序列个数时，我将原序列拆分成4个长度为二的数组（[2,3],[3,4],[4,4],[4,2]）再依次判断数组是否为连续上升的。</p>
-<p>这里我定义了一个判断数组是否连续上升的函数：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">judge</span>(<span class="params">alist</span>):</span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">any</span>(alist[i+<span class="number">1</span>]&lt;=alist[i] <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>,<span class="built_in">len</span>(alist)-<span class="number">1</span>)) <span class="keyword">or</span> alist==[]:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">True</span></span><br></pre></td></tr></table></figure>
-
-<p>主函数</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    <span class="comment"># 读取第一行的n</span></span><br><span class="line">    n = <span class="built_in">int</span>(sys.stdin.readline().strip())</span><br><span class="line">    numlist = <span class="built_in">list</span>(sys.stdin.readline().split())</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">        numlist[i] = <span class="built_in">int</span>(numlist[i])</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,n+<span class="number">1</span>):</span><br><span class="line">        <span class="keyword">if</span> i == <span class="number">1</span>:</span><br><span class="line">            <span class="built_in">print</span>(n,end=<span class="string">&#x27; &#x27;</span>)</span><br><span class="line">            <span class="keyword">continue</span></span><br><span class="line">        num = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(n-i+<span class="number">1</span>):</span><br><span class="line">            alist = numlist[j:j+i]</span><br><span class="line">            <span class="comment">#print(alist)</span></span><br><span class="line">            <span class="keyword">if</span> judge(alist) == <span class="literal">True</span>:</span><br><span class="line">                num+=<span class="number">1</span></span><br><span class="line">        <span class="built_in">print</span>(num,end=<span class="string">&#x27; &#x27;</span>)</span><br></pre></td></tr></table></figure> 
+<p>这里我定义了一个判断数组是否连续上升的函数：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">judge</span>(<span class="params">alist</span>):</span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">any</span>(alist[i+<span class="number">1</span>]&lt;=alist[i] <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>,<span class="built_in">len</span>(alist)-<span class="number">1</span>)) <span class="keyword">or</span> alist==[]:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">True</span></span><br></pre></td></tr></table></figure></p>
+<p>主函数<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    <span class="comment"># 读取第一行的n</span></span><br><span class="line">    n = <span class="built_in">int</span>(sys.stdin.readline().strip())</span><br><span class="line">    numlist = <span class="built_in">list</span>(sys.stdin.readline().split())</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">        numlist[i] = <span class="built_in">int</span>(numlist[i])</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,n+<span class="number">1</span>):</span><br><span class="line">        <span class="keyword">if</span> i == <span class="number">1</span>:</span><br><span class="line">            <span class="built_in">print</span>(n,end=<span class="string">&#x27; &#x27;</span>)</span><br><span class="line">            <span class="keyword">continue</span></span><br><span class="line">        num = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(n-i+<span class="number">1</span>):</span><br><span class="line">            alist = numlist[j:j+i]</span><br><span class="line">            <span class="comment">#print(alist)</span></span><br><span class="line">            <span class="keyword">if</span> judge(alist) == <span class="literal">True</span>:</span><br><span class="line">                num+=<span class="number">1</span></span><br><span class="line">        <span class="built_in">print</span>(num,end=<span class="string">&#x27; &#x27;</span>)</span><br></pre></td></tr></table></figure></p>
+ 
       <!-- reward -->
       
     </div>
@@ -588,23 +582,6 @@
     
 
   </div>
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-
-
 </body>
 
 </html>

@@ -106,7 +106,8 @@
   
     <div class="article-entry" itemprop="articleBody">
        
-  <h1 id="进程间调度"><a href="#进程间调度" class="headerlink" title="进程间调度"></a>进程间调度</h1><p>当一个计算机是多道程序设计系统时，会频繁的有很多进程或者线程来同时竞争CPU时间片。当两个或两个以上的进程/线程处于就绪状态时，就会发生这种情况。如果只有一个CPU可用，那么必须选择接下来哪个进程/线程可以运行。操作系统中有一个叫做调度程序(scheduler)的角色存在，它就是做这件事儿的，该程序使用的算法叫做调度算法(scheduling algorithm) 。<br><span id="more"></span><br>尽管有一些不同，但许多适用于进程调度的处理方法同样也适用于线程调度。当内核管理线程的时候，调度通常会以线程级别发生，很少或者根本不会考虑线程属于哪个进程。下面我们会首先专注于进程和线程的调度问题，然后会明确的介绍线程调度以及它产生的问题。</p>
+  <p><meta name="referrer" content="no-referrer"/></p>
+<h1 id="进程间调度"><a href="#进程间调度" class="headerlink" title="进程间调度"></a>进程间调度</h1><p>当一个计算机是多道程序设计系统时，会频繁的有很多进程或者线程来同时竞争CPU时间片。当两个或两个以上的进程/线程处于就绪状态时，就会发生这种情况。如果只有一个CPU可用，那么必须选择接下来哪个进程/线程可以运行。操作系统中有一个叫做调度程序(scheduler)的角色存在，它就是做这件事儿的，该程序使用的算法叫做调度算法(scheduling algorithm) 。<br><span id="more"></span><br>尽管有一些不同，但许多适用于进程调度的处理方法同样也适用于线程调度。当内核管理线程的时候，调度通常会以线程级别发生，很少或者根本不会考虑线程属于哪个进程。下面我们会首先专注于进程和线程的调度问题，然后会明确的介绍线程调度以及它产生的问题。</p>
 <blockquote>
 <p>读操作不需要获得任何锁就可以访问，不使用原子操作。写操作在访问前需要先复制一份副本，然后对副本进行修改，最后使用一个回调机制，在适当的时机把指向原来数据的指针重新指向新的被修改的数据。</p>
 </blockquote>
@@ -660,23 +661,6 @@
     
 
   </div>
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-
-
 </body>
 
 </html>

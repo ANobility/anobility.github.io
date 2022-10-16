@@ -106,7 +106,8 @@
   
     <div class="article-entry" itemprop="articleBody">
        
-  <h1 id="进程间通信"><a href="#进程间通信" class="headerlink" title="进程间通信"></a>进程间通信</h1><p>进程是需要频繁的和其他进程进行交流的。例如，在一个 shell 管道中，第一个进程的输出必须传递给第二个进程，这样沿着管道进行下去。因此，进程之间如果需要通信的话，必须要使用一种良好的数据结构以至于不能被中断。下面我们会一起讨论有关 进程间通信(Inter Process Communication, IPC) 的问题。<br><span id="more"></span><br>关于进程间的通信，这里有三个问题</p>
+  <p><meta name="referrer" content="no-referrer"/></p>
+<h1 id="进程间通信"><a href="#进程间通信" class="headerlink" title="进程间通信"></a>进程间通信</h1><p>进程是需要频繁的和其他进程进行交流的。例如，在一个 shell 管道中，第一个进程的输出必须传递给第二个进程，这样沿着管道进行下去。因此，进程之间如果需要通信的话，必须要使用一种良好的数据结构以至于不能被中断。下面我们会一起讨论有关 进程间通信(Inter Process Communication, IPC) 的问题。<br><span id="more"></span><br>关于进程间的通信，这里有三个问题</p>
 <p>上面提到了第一个问题，那就是一个进程如何传递消息给其他进程。<br>第二个问题是如何确保两个或多个进程之间不会相互干扰。例如，两个航空公司都试图为不同的顾客抢购飞机上的最后一个座位。<br>第三个问题是数据的先后顺序的问题，如果进程 A 产生数据并且进程 B 打印数据。则进程 B 打印数据之前需要先等 A 产生数据后才能够进行打印。<br>需要注意的是，这三个问题中的后面两个问题同样也适用于线程</p>
 <p>第一个问题在线程间比较好解决，因为它们共享一个地址空间，它们具有相同的运行时环境，可以想象你在用高级语言编写多线程代码的过程中，线程通信问题是不是比较容易解决？</p>
 <p>另外两个问题也同样适用于线程，同样的问题可用同样的方法来解决。</p>
@@ -631,23 +632,6 @@
     
 
   </div>
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-
-
 </body>
 
 </html>
