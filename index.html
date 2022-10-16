@@ -565,11 +565,13 @@
       
     <div class="article-entry" itemprop="articleBody">
        
-  <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>操作系统也是一种软件，但是操作系统是一种非常复杂的软件。操作系统提供了几种抽象模型</p>
+  <meta name="referrer" content="no-referrer"/>
+
+<h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>操作系统也是一种软件，但是操作系统是一种非常复杂的软件。操作系统提供了几种抽象模型</p>
 <blockquote>
-<p>文件：对 I&#x2F;O 设备的抽象<br>虚拟内存：对程序存储器的抽象<br>进程：对一个正在运行程序的抽象<br>虚拟机：对整个操作系统的抽象</p>
+<p>文件：对 I/O 设备的抽象<br>虚拟内存：对程序存储器的抽象<br>进程：对一个正在运行程序的抽象<br>虚拟机：对整个操作系统的抽象</p>
 </blockquote>
-<p>学习操作系统可以让我们有效解决并发问题。</p> 
+<p>学习操作系统可以让我们有效解决并发问题。<br> 
       <a class="article-more-link" href="/2022/08/24/cao-zuo-xi-tong-bi-ji-ying-jian-jie-shao/"
         >阅读更多</a
       >
@@ -945,6 +947,23 @@
     
 
   </div>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
 </body>
 
 </html>

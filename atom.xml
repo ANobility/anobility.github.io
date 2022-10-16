@@ -150,14 +150,16 @@
     <link href="https://weberblog.top/2022/08/24/cao-zuo-xi-tong-bi-ji-ying-jian-jie-shao/"/>
     <id>https://weberblog.top/2022/08/24/cao-zuo-xi-tong-bi-ji-ying-jian-jie-shao/</id>
     <published>2022-08-23T17:56:38.000Z</published>
-    <updated>2022-08-30T14:51:11.804Z</updated>
+    <updated>2022-10-16T08:31:02.405Z</updated>
     
     
-    <summary type="html">&lt;h1 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h1&gt;&lt;p&gt;操作系统也是一种软件，但是操作系统是一种非常复杂的软件。操作系统提供了几种抽象模型&lt;/p&gt;
+    <summary type="html">&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;/&gt;
+
+&lt;h1 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h1&gt;&lt;p&gt;操作系统也是一种软件，但是操作系统是一种非常复杂的软件。操作系统提供了几种抽象模型&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;文件：对 I&amp;#x2F;O 设备的抽象&lt;br&gt;虚拟内存：对程序存储器的抽象&lt;br&gt;进程：对一个正在运行程序的抽象&lt;br&gt;虚拟机：对整个操作系统的抽象&lt;/p&gt;
+&lt;p&gt;文件：对 I/O 设备的抽象&lt;br&gt;虚拟内存：对程序存储器的抽象&lt;br&gt;进程：对一个正在运行程序的抽象&lt;br&gt;虚拟机：对整个操作系统的抽象&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;学习操作系统可以让我们有效解决并发问题。&lt;/p&gt;</summary>
+&lt;p&gt;学习操作系统可以让我们有效解决并发问题。&lt;br&gt;</summary>
     
     
     
