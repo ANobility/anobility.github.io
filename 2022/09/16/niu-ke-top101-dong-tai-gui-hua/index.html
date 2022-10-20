@@ -82,7 +82,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">1.4k</span>
+            <span class="post-count">1.5k</span>
         </span>
     </span>
 
@@ -91,7 +91,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> 阅读时长≈</span>
-            <span class="post-count">5 分钟</span>
+            <span class="post-count">6 分钟</span>
         </span>
     </span>
 </div>
@@ -114,6 +114,13 @@
 <p>数据范围：$1\leq n\leq 40$<br>要求：空间复杂度 $O(1)$，时间复杂度 $O(n)$，本题也有时间复杂度 $O(logn)$ 的解法</p>
 <p><strong>思路</strong><br>当n小于2时，斐波那契的值和n相同；当n大于等于2时，F(n) 只和F(n−1) 与F(n−2) 有关，我们设b为F(n-1),a为F(n-2),轮流以b和a+b的值替换a和b即可。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">Fibonacci</span>(<span class="params">self , n: <span class="built_in">int</span></span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        <span class="keyword">if</span> n&lt;<span class="number">2</span>:</span><br><span class="line">            <span class="keyword">return</span> n</span><br><span class="line">        a = <span class="number">0</span></span><br><span class="line">        b = <span class="number">1</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,n):</span><br><span class="line">            a,b = b,a+b</span><br><span class="line">        <span class="keyword">return</span> b</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="BM63-跳台阶"><a href="#BM63-跳台阶" class="headerlink" title="BM63 跳台阶"></a>BM63 跳台阶</h2><p><a target="_blank" rel="noopener" href="https://www.nowcoder.com/practice/8c82a5b80378478f9484d87d1c5f12a4?tpId=295&amp;tags=&amp;title=&amp;difficulty=0&amp;judgeStatus=0&amp;rp=0&amp;sourceUrl=%2Fexam%2Foj%3Fpage%3D1%26tab%3D%25E7%25AE%2597%25E6%25B3%2595%25E7%25AF%2587%26topicId%3D295">跳台阶</a></p>
+<p><strong>描述</strong><br>一只青蛙一次可以跳上1级台阶，也可以跳上2级。求该青蛙跳上一个 n 级的台阶总共有多少种跳法（先后次序不同算不同的结果）。</p>
+<p>数据范围：$1 \leq n \leq 40$<br>要求：时间复杂度：$O(n)$ ，空间复杂度：$ O(1)$</p>
+<p><strong>思路</strong><br>当n小于2时，斐波那契的值和n相同；当n大于等于2时，F(n) 只和F(n−1) 与F(n−2) 有关，我们设b为F(n-1),a为F(n-2),轮流以b和a+b的值替换a和b即可。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">jumpFloor</span>(<span class="params">self , number: <span class="built_in">int</span></span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        <span class="keyword">if</span> number&lt;<span class="number">2</span>:</span><br><span class="line">            <span class="keyword">return</span> number</span><br><span class="line">        </span><br><span class="line">        a = <span class="number">1</span></span><br><span class="line">        b = <span class="number">1</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,number):</span><br><span class="line">            a,b = b,a+b</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> b</span><br></pre></td></tr></table></figure>
+<hr>
 <h2 id="BM65最长公共子序列-二"><a href="#BM65最长公共子序列-二" class="headerlink" title="BM65最长公共子序列(二)"></a>BM65最长公共子序列(二)</h2><p><a target="_blank" rel="noopener" href="https://www.nowcoder.com/practice/6d29638c85bb4ffd80c020fe244baf11?tpId=295&amp;tags=&amp;title=&amp;difficulty=0&amp;judgeStatus=0&amp;rp=0&amp;sourceUrl=%2Fexam%2Foj">最长公共子序列(二)</a></p>
 <p><strong>描述</strong><br>给定两个字符串str1和str2，输出两个字符串的最长公共子序列。如果最长公共子序列为空，则返回”-1”。目前给出的数据，仅仅会存在一个最长的公共子序列</p>
 <p>数据范围：$0 \le |str1|,|str2| \le 20000$<br>要求：空间复杂度 $O(n^2)$ ，时间复杂度 $O(n^2)$.</p>
