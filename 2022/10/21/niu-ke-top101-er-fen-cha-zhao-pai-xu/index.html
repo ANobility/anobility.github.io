@@ -12,7 +12,7 @@
         content="width=device-width, initial-scale=1, maximum-scale=1"
       />
       <meta name="baidu-site-verification" content="code-bCi2SAvuDT" />
-      <title>操作系统笔记（6）- 内存管理 上 |  Weber&#39;s island</title>
+      <title>二分查找/排序 |  Weber&#39;s island</title>
   <meta name="generator" content="hexo-theme-ayer">
       
       <link rel="shortcut icon" href="/favicon.ico" />
@@ -55,8 +55,8 @@
     <main class="content on">
       <section class="outer">
   <article
-  id="post-操作系统笔记-内存管理-1"
-  class="article article-type-post"
+  id="牛客面试必刷TOP101 - 二分查找/排序-牛客TOP101-二分查找&amp;排序"
+  class="article article-type-牛客面试必刷TOP101 - 二分查找/排序"
   itemscope
   itemprop="blogPost"
   data-scroll-reveal
@@ -66,7 +66,7 @@
     <header class="article-header">
        
 <h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  操作系统笔记（6）- 内存管理 上
+  二分查找/排序
 </h1>
  
 
@@ -74,15 +74,15 @@
     </header>
      
     <div class="article-meta">
-      <a href="/2022/10/16/cao-zuo-xi-tong-bi-ji-nei-cun-guan-li-1/" class="article-date">
-  <time datetime="2022-10-15T21:12:20.000Z" itemprop="datePublished">2022-10-15</time>
+      <a href="/2022/10/21/niu-ke-top101-er-fen-cha-zhao-pai-xu/" class="article-date">
+  <time datetime="2022-10-20T17:07:29.000Z" itemprop="datePublished">2022-10-20</time>
 </a>   
 <div class="word_count">
     <span class="post-time">
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">333</span>
+            <span class="post-count">1.1k</span>
         </span>
     </span>
 
@@ -91,7 +91,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> 阅读时长≈</span>
-            <span class="post-count">1 分钟</span>
+            <span class="post-count">4 分钟</span>
         </span>
     </span>
 </div>
@@ -106,13 +106,35 @@
   
     <div class="article-entry" itemprop="articleBody">
        
-  <p><meta name="referrer" content="no-referrer"/></p>
-<h1 id="内存管理"><a href="#内存管理" class="headerlink" title="内存管理"></a>内存管理</h1><p><img src="https://pic.leetcode-cn.com/1612665297-yVOICs-os3-0.png" alt=""><br>主存(RAM) 是一件非常重要的资源，必须要认真对待内存。不管存储器有多大，程序大小的增长速度比内存容量的增长速度要快的多。下面我们就来探讨一下操作系统是如何创建内存并管理他们的。</p>
-<span id="more"></span>
-<p>经过多年的研究发现，科学家提出了一种 分层存储器体系(memory hierarchy)，下面是分层体系的分类:<br><img src="https://pic.leetcode-cn.com/1612665300-EydqrQ-os3-1.png" alt=""><br>位于顶层的存储器速度最快，但是相对容量最小，成本非常高。层级结构向下，其访问速度会变慢，但是容量会变大，相对造价也就越便宜。</p>
-<p>操作系统中管理内存层次结构的部分称为内存管理器(memory manager)，它的主要工作是有效的管理内存，记录哪些内存是正在使用的，在进程需要时分配内存以及在进程完成时回收内存。所有现代操作系统都提供内存管理。</p>
-<p>下面我们会对不同的内存管理模型进行探讨，从简单到复杂，由于最低级别的缓存是由硬件进行管理的，所以我们主要探讨主存模型和如何对主存进行管理。</p>
-<h2 id="无存储抽象"><a href="#无存储抽象" class="headerlink" title="无存储抽象"></a>无存储抽象</h2> 
+  <p>本笔记为newcoder面试必刷TOP101的链表解题思路，笔者能力有限，内容仅供参考。</p>
+<p>本笔记将会包括算法和数据结构方向11个模块，动归、查找/排序、二叉树、链表、堆栈/队列、哈希、递归/回溯、字符串、双指针、贪心和模拟。</p>
+<p>本笔记尚未完结，不定期更新，详细情况请点击右下角阅读更多。<br><span id="more"></span></p>
+<h1 id="二分查找-排序"><a href="#二分查找-排序" class="headerlink" title="二分查找/排序"></a>二分查找/排序</h1><h2 id="BM17-二分查找-I"><a href="#BM17-二分查找-I" class="headerlink" title="BM17 二分查找-I"></a>BM17 二分查找-I</h2><p><a target="_blank" rel="noopener" href="https://www.nowcoder.com/practice/d3df40bd23594118b57554129cadf47b?tpId=295&amp;tqId=1499549&amp;ru=/exam/oj&amp;qru=/ta/format-top101/question-ranking&amp;sourceUrl=%2Fexam%2Foj">二分查找-I</a></p>
+<p><strong>描述</strong><br>请实现无重复数字的升序数组的二分查找</p>
+<p>给定一个 元素升序的、无重复数字的整型数组 nums 和一个目标值 target ，写一个函数搜索 nums 中的 target，如果目标值存在返回下标（下标从 0 开始），否则返回 -1</p>
+<p>数据范围：$0 \le len(nums) \le 2\times10^5$,数组中任意值满足 $|val| \le 10^9$<br>进阶：时间复杂度 $O(\log n)$，空间复杂度 $O(1)$</p>
+<blockquote>
+<p>输入：[-1,0,3,4,6,10,13,14],13<br>返回值：6<br>说明：13 出现在nums中并且下标为 6 </p>
+</blockquote>
+<p><strong>思路</strong><br>二分查找对边界的判断格外重要，我这里使用前闭后开区间$[left,right)$，因为它的规则和列表、range的定义很像。有以下几点需要注意：</p>
+<font color=red> 1、left = 0 , right = len(list)。左指针定义为0，右指针为列表长度
+2、while (left < right)，这里使用 < ,因为left == right在区间[left, right)是没有意义的
+3、left 更新为 mid+1，因为它是闭，可以被取；right 更新为 mid，因为它是开，不可被取
+</font>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">search</span>(<span class="params">self , nums: <span class="type">List</span>[<span class="built_in">int</span>], target: <span class="built_in">int</span></span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        <span class="comment">#定义左右指针</span></span><br><span class="line">        left = <span class="number">0</span></span><br><span class="line">        right = <span class="built_in">len</span>(nums)</span><br><span class="line">        <span class="comment">#特殊情况判断</span></span><br><span class="line">        <span class="keyword">if</span> nums == []:</span><br><span class="line">            <span class="keyword">return</span> -<span class="number">1</span></span><br><span class="line">        <span class="comment">#开始查找</span></span><br><span class="line">        <span class="keyword">while</span> left&lt;right:</span><br><span class="line">            mid = (left+right)//<span class="number">2</span></span><br><span class="line">            <span class="keyword">if</span> nums[mid] &gt; target:</span><br><span class="line">                right = mid</span><br><span class="line">            <span class="keyword">elif</span> nums[mid] &lt; target:</span><br><span class="line">                left = mid+<span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">return</span> mid</span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span></span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="BM18-二维数组中的查找"><a href="#BM18-二维数组中的查找" class="headerlink" title="BM18 二维数组中的查找"></a>BM18 二维数组中的查找</h2><p><a target="_blank" rel="noopener" href="https://www.nowcoder.com/practice/abc3fe2ce8e146608e868a70efebf62e?tpId=295&amp;tags=&amp;title=&amp;difficulty=0&amp;judgeStatus=0&amp;rp=0&amp;sourceUrl=%2Fexam%2Foj">二维数组中的查找</a><br><strong>描述</strong><br>在一个二维数组array中（每个一维数组的长度相同），每一行都按照从左到右递增的顺序排序，每一列都按照从上到下递增的顺序排序。请完成一个函数，输入这样的一个二维数组和一个整数，判断数组中是否含有该整数。<br>$[<br>[1,2,8,9],<br>[2,4,9,12],<br>[4,7,10,13],<br>[6,8,11,15]<br>]$<br>给定 target = 7，返回 true。<br>给定 target = 3，返回 false。</p>
+<p>数据范围：矩阵的长宽满足 $0 \le n$,$m \le 500$ ， 矩阵中的值满足 $0 \le val \le 10^9$<br>进阶：空间复杂度 $O(1)$，时间复杂度 $O(n+m)$</p>
+<p><strong>思路</strong><br>我们通过观察可以得知矩阵左下角的值大于它上方的值，小于其右面的值，所以我们从左下角开始搜索，比target大就往上移动，比target小就往右移动。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">Find</span>(<span class="params">self , target: <span class="built_in">int</span>, array: <span class="type">List</span>[<span class="type">List</span>[<span class="built_in">int</span>]]</span>) -&gt; <span class="built_in">bool</span>:</span><br><span class="line">        n = <span class="built_in">len</span>(array[<span class="number">0</span>])-<span class="number">1</span><span class="comment">#长</span></span><br><span class="line">        m = <span class="built_in">len</span>(array)-<span class="number">1</span><span class="comment">#宽</span></span><br><span class="line">        <span class="keyword">if</span> n==<span class="number">0</span> <span class="keyword">or</span> m==<span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        n1 = <span class="number">0</span></span><br><span class="line">        m1 = m</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> m&gt;=m1&gt;=<span class="number">0</span> <span class="keyword">and</span> n&gt;=n1&gt;=<span class="number">0</span>:</span><br><span class="line">            node = array[m1][n1]</span><br><span class="line">            <span class="keyword">if</span> node &gt; target:</span><br><span class="line">                m1 = m1-<span class="number">1</span></span><br><span class="line">            <span class="keyword">elif</span> node &lt; target:</span><br><span class="line">                n1 = n1+<span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">False</span></span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="BM19-寻找峰值"><a href="#BM19-寻找峰值" class="headerlink" title="BM19 寻找峰值"></a>BM19 寻找峰值</h2><p>[寻找峰值](<a target="_blank" rel="noopener" href="https://www.nowcoder.com/practice/fcf87540c4f347bcb4cf720b5b350c76?tpId=295&amp;tqId=2227748&amp;ru=%2Fpractice%2Fabc3fe2ce8e146608e868a70efebf62e&amp;qru=%2Fta%2Fformat-top101%2Fquestion-ranking&amp;sourceUrl=%2Fexam%2Foj）">https://www.nowcoder.com/practice/fcf87540c4f347bcb4cf720b5b350c76?tpId=295&amp;tqId=2227748&amp;ru=%2Fpractice%2Fabc3fe2ce8e146608e868a70efebf62e&amp;qru=%2Fta%2Fformat-top101%2Fquestion-ranking&amp;sourceUrl=%2Fexam%2Foj）</a></p>
+<p><strong>描述</strong><br>给定一个长度为n的数组nums，请你找到峰值并返回其索引。数组可能包含多个峰值，在这种情况下，返回任何一个所在位置即可。<br>1.峰值元素是指其值严格大于左右相邻值的元素。严格大于即不能有等于<br>2.假设 $nums[-1] = nums[n] = -\infty−∞$<br>3.对于所有有效的 i 都有 $nums[i] != nums[i + 1]$<br>4.你可以使用$O(logN)$的时间复杂度实现此问题吗？</p>
+<p>数据范围：<br>$1 \le nums.length \le 2\times 10^5$<br>$-2^{31}&lt;= nums[i] &lt;= 2^{31} -1$</p>
+<p>如输入[2,4,1,2,7,8,4]时，会形成两个山峰，一个是索引为1，峰值为4的山峰，另一个是索引为5，峰值为8的山峰，如下图所示：<br><img src="https://uploadfiles.nowcoder.com/images/20211014/423483716_1634212356346/9EB9CD58B9EA5E04C890326B5C1F471F" alt=""></p>
+<p><strong>思路</strong><br>利用二分查找的思想，找到mid。如果中点右面面的值大，left=mid+1；如果中点左面的值大，right=mid；如果都不大返回mid。循环结束条件是letf==right，此时返回left/right即可。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">findPeakElement</span>(<span class="params">self , nums: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        right = <span class="built_in">len</span>(nums)-<span class="number">1</span></span><br><span class="line">        left = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> left!=right:</span><br><span class="line">            mid = (left+right)//<span class="number">2</span></span><br><span class="line">            <span class="keyword">if</span> nums[mid+<span class="number">1</span>]&gt;nums[mid]:</span><br><span class="line">                left = mid+<span class="number">1</span></span><br><span class="line">            <span class="keyword">elif</span> nums[mid-<span class="number">1</span>]&gt;nums[mid]:</span><br><span class="line">                right = mid</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">return</span> mid</span><br><span class="line">        <span class="keyword">return</span> left</span><br></pre></td></tr></table></figure> 
       <!-- reward -->
       
     </div>
@@ -176,12 +198,12 @@
     <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://weberblog.top/2022/10/16/cao-zuo-xi-tong-bi-ji-nei-cun-guan-li-1/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://weberblog.top/2022/10/21/niu-ke-top101-er-fen-cha-zhao-pai-xu/" alt="微信分享二维码">
     </div>
 </div>
 
 <div id="share-mask"></div>  
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag">操作系统</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li></ul>
 
     </footer>
   </div>
@@ -189,19 +211,10 @@
    
   <nav class="article-nav">
     
-      <a href="/2022/10/21/niu-ke-top101-er-fen-cha-zhao-pai-xu/" class="article-nav-link">
-        <strong class="article-nav-caption">上一篇</strong>
-        <div class="article-nav-title">
-          
-            二分查找/排序
-          
-        </div>
-      </a>
     
-    
-      <a href="/2022/09/28/cao-zuo-xi-tong-bi-ji-jin-cheng-diao-du/" class="article-nav-link">
+      <a href="/2022/10/16/cao-zuo-xi-tong-bi-ji-nei-cun-guan-li-1/" class="article-nav-link">
         <strong class="article-nav-caption">下一篇</strong>
-        <div class="article-nav-title">操作系统笔记（5）- 进程间调度</div>
+        <div class="article-nav-title">操作系统笔记（6）- 内存管理 上</div>
       </a>
     
   </nav>
