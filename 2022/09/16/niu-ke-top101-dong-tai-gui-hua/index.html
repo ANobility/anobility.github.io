@@ -82,7 +82,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">1.1k</span>
+            <span class="post-count">1.4k</span>
         </span>
     </span>
 
@@ -91,7 +91,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> 阅读时长≈</span>
-            <span class="post-count">4 分钟</span>
+            <span class="post-count">5 分钟</span>
         </span>
     </span>
 </div>
@@ -109,7 +109,12 @@
   <p>本笔记为newcoder面试必刷TOP101的动态规划解题思路，笔者能力有限，内容仅供参考。</p>
 <p>本笔记将会包括算法和数据结构方向11个模块，动归、查找/排序、二叉树、链表、堆栈/队列、哈希、递归/回溯、字符串、双指针、贪心和模拟。</p>
 <p>本笔记尚未完结，不定期更新，详细情况请点击右下角阅读更多。<br><span id="more"></span></p>
-<h1 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h1><h2 id="BM65最长公共子序列-二"><a href="#BM65最长公共子序列-二" class="headerlink" title="BM65最长公共子序列(二)"></a>BM65最长公共子序列(二)</h2><p><a target="_blank" rel="noopener" href="https://www.nowcoder.com/practice/6d29638c85bb4ffd80c020fe244baf11?tpId=295&amp;tags=&amp;title=&amp;difficulty=0&amp;judgeStatus=0&amp;rp=0&amp;sourceUrl=%2Fexam%2Foj">最长公共子序列(二)</a></p>
+<h1 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h1><h2 id="BM62-斐波那契数列"><a href="#BM62-斐波那契数列" class="headerlink" title="BM62 斐波那契数列"></a>BM62 斐波那契数列</h2><p><a target="_blank" rel="noopener" href="https://www.nowcoder.com/practice/c6c7742f5ba7442aada113136ddea0c3?tpId=295&amp;tqId=23255&amp;ru=/exam/oj&amp;qru=/ta/format-top101/question-ranking&amp;sourceUrl=%2Fexam%2Foj%3Fpage%3D1%26tab%3D%25E7%25AE%2597%25E6%25B3%2595%25E7%25AF%2587%26topicId%3D295">斐波那契数列</a></p>
+<p><strong>描述</strong><br>大家都知道斐波那契数列，现在要求输入一个正整数 n ，请你输出斐波那契数列的第 n 项。<br>斐波那契数列是一个满足 $fib(x)=\left\{ \begin{array}{rcl} 1 &amp; {x=1,2}\\ fib(x-1)+fib(x-2)  &amp;{x&gt;2}\\ \end{array} \right.$的数列</p>
+<p>数据范围：$1\leq n\leq 40$<br>要求：空间复杂度 $O(1)$，时间复杂度 $O(n)$，本题也有时间复杂度 $O(logn)$ 的解法</p>
+<p><strong>思路</strong><br>当n小于2时，斐波那契的值和n相同；当n大于等于2时，F(n) 只和F(n−1) 与F(n−2) 有关，我们设b为F(n-1),a为F(n-2),轮流以b和a+b的值替换a和b即可。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">Fibonacci</span>(<span class="params">self , n: <span class="built_in">int</span></span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        <span class="keyword">if</span> n&lt;<span class="number">2</span>:</span><br><span class="line">            <span class="keyword">return</span> n</span><br><span class="line">        a = <span class="number">0</span></span><br><span class="line">        b = <span class="number">1</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,n):</span><br><span class="line">            a,b = b,a+b</span><br><span class="line">        <span class="keyword">return</span> b</span><br></pre></td></tr></table></figure>
+<h2 id="BM65最长公共子序列-二"><a href="#BM65最长公共子序列-二" class="headerlink" title="BM65最长公共子序列(二)"></a>BM65最长公共子序列(二)</h2><p><a target="_blank" rel="noopener" href="https://www.nowcoder.com/practice/6d29638c85bb4ffd80c020fe244baf11?tpId=295&amp;tags=&amp;title=&amp;difficulty=0&amp;judgeStatus=0&amp;rp=0&amp;sourceUrl=%2Fexam%2Foj">最长公共子序列(二)</a></p>
 <p><strong>描述</strong><br>给定两个字符串str1和str2，输出两个字符串的最长公共子序列。如果最长公共子序列为空，则返回”-1”。目前给出的数据，仅仅会存在一个最长的公共子序列</p>
 <p>数据范围：$0 \le |str1|,|str2| \le 20000$<br>要求：空间复杂度 $O(n^2)$ ，时间复杂度 $O(n^2)$.</p>
 <blockquote>
@@ -616,6 +621,23 @@
     
 
   </div>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
 </body>
 
 </html>
