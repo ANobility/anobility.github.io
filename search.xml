@@ -437,9 +437,9 @@
       </tags>
   </entry>
   <entry>
-    <title>二分查找/排序</title>
-    <url>/2022/10/21/niu-ke-top101-er-fen-cha-zhao-pai-xu/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>本笔记为newcoder面试必刷TOP101的链表解题思路，笔者能力有限，内容仅供参考。</p>
+    <title>牛客面试必刷TOP101 - 二分查找/排序</title>
+    <url>/2022/09/16/niu-ke-top101-er-fen-cha-zhao-pai-xu/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>本笔记为newcoder面试必刷TOP101的二分查找/排序解题思路，笔者能力有限，内容仅供参考。</p>
 <p>本笔记将会包括算法和数据结构方向11个模块，动归、查找/排序、二叉树、链表、堆栈/队列、哈希、递归/回溯、字符串、双指针、贪心和模拟。</p>
 <p>本笔记尚未完结，不定期更新，详细情况请点击右下角阅读更多。<br><span id="more"></span></p>
 <h1 id="二分查找-排序"><a href="#二分查找-排序" class="headerlink" title="二分查找/排序"></a>二分查找/排序</h1><h2 id="BM17-二分查找-I"><a href="#BM17-二分查找-I" class="headerlink" title="BM17 二分查找-I"></a>BM17 二分查找-I</h2><p><a href="https://www.nowcoder.com/practice/d3df40bd23594118b57554129cadf47b?tpId=295&amp;tqId=1499549&amp;ru=/exam/oj&amp;qru=/ta/format-top101/question-ranking&amp;sourceUrl=%2Fexam%2Foj">二分查找-I</a></p>
@@ -473,11 +473,11 @@
       </tags>
   </entry>
   <entry>
-    <title>牛客面试必刷TOP101</title>
+    <title>牛客面试必刷TOP101 - 链表 Linklist</title>
     <url>/2022/09/16/niu-ke-top101-lian-biao/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><meta name="referrer" content="no-referrer"/>
 
-<p>本笔记为newcoder面试必刷TOP101的解题思路，笔者能力有限，内容仅供参考。</p>
+<p>本笔记为newcoder面试必刷TOP101的链表解题思路，笔者能力有限，内容仅供参考。</p>
 <p>本笔记将会包括算法和数据结构方向11个模块，动归、查找/排序、二叉树、链表、堆栈/队列、哈希、递归/回溯、字符串、双指针、贪心和模拟。</p>
 <p>本笔记尚未完结，不定期更新，详细情况请点击右下角阅读更多。<br><span id="more"></span></p>
 <h1 id="链表"><a href="#链表" class="headerlink" title="链表"></a>链表</h1><h2 id="BM1-反转链表"><a href="#BM1-反转链表" class="headerlink" title="BM1 反转链表"></a>BM1 反转链表</h2><p><a href="https://www.nowcoder.com/practice/75e878df47f24fdc9dc3e400ec6058ca?tpId=295&amp;tqId=23286&amp;ru=%2Fpractice%2F886370fe658f41b498d40fb34ae76ff9&amp;qru=%2Fta%2Fformat-top101%2Fquestion-ranking&amp;sourceUrl=%2Fexam%2Foj">反转链表</a></p>
@@ -542,32 +542,17 @@
 <p><strong>思路</strong><br>首先计算出两个链表长度n1、n2，将更长的链表初始指针移动｜n1-n2｜个单位，这样两个链表初始指针就在同一个开始位置，然后同时移动并比较节点是否相同，若相同则为公共节点。</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">FindFirstCommonNode</span>(<span class="params">self , pHead1 , pHead2 </span>):</span><br><span class="line">        <span class="keyword">if</span> pHead1 == <span class="literal">None</span> <span class="keyword">or</span> pHead2 == <span class="literal">None</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line">        n1 ,n2 = <span class="number">0</span>,<span class="number">0</span></span><br><span class="line">        node1,node2 = pHead1,pHead2</span><br><span class="line">        <span class="keyword">while</span> node1.<span class="built_in">next</span>:</span><br><span class="line">            node1 = node1.<span class="built_in">next</span></span><br><span class="line">            n1+=<span class="number">1</span></span><br><span class="line">        <span class="keyword">while</span> node2.<span class="built_in">next</span>:</span><br><span class="line">            node2 = node2.<span class="built_in">next</span></span><br><span class="line">            n2+=<span class="number">1</span></span><br><span class="line"></span><br><span class="line">        node1,node2 = pHead1,pHead2  </span><br><span class="line">        <span class="keyword">if</span> n2&gt;n1:</span><br><span class="line">            n = n2-n1</span><br><span class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">                node2 = node2.<span class="built_in">next</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            n = n1-n2</span><br><span class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">                node1 = node1.<span class="built_in">next</span></span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span> node1:</span><br><span class="line">            <span class="keyword">if</span> node1 == node2:</span><br><span class="line">                <span class="keyword">return</span> node1</span><br><span class="line">            node1 = node1.<span class="built_in">next</span></span><br><span class="line">            node2 = node2.<span class="built_in">next</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">None</span></span><br></pre></td></tr></table></figure>
 <hr>
-<h1 id="二分查找-排序"><a href="#二分查找-排序" class="headerlink" title="二分查找/排序"></a>二分查找/排序</h1><h2 id="BM17-二分查找-I"><a href="#BM17-二分查找-I" class="headerlink" title="BM17 二分查找-I"></a>BM17 二分查找-I</h2><p><a href="https://www.nowcoder.com/practice/d3df40bd23594118b57554129cadf47b?tpId=295&amp;tqId=1499549&amp;ru=/exam/oj&amp;qru=/ta/format-top101/question-ranking&amp;sourceUrl=%2Fexam%2Foj">二分查找-I</a></p>
-<p><strong>描述</strong><br>请实现无重复数字的升序数组的二分查找</p>
-<p>给定一个 元素升序的、无重复数字的整型数组 nums 和一个目标值 target ，写一个函数搜索 nums 中的 target，如果目标值存在返回下标（下标从 0 开始），否则返回 -1</p>
-<p>数据范围：$0 \le len(nums) \le 2\times10^5$,数组中任意值满足 $|val| \le 10^9$<br>进阶：时间复杂度 $O(\log n)$，空间复杂度 $O(1)$</p>
-<blockquote>
-<p>输入：[-1,0,3,4,6,10,13,14],13<br>返回值：6<br>说明：13 出现在nums中并且下标为 6 </p>
-</blockquote>
-<p><strong>思路</strong><br>二分查找对边界的判断格外重要，我这里使用前闭后开区间$[left,right)$，因为它的规则和列表、range的定义很像。有以下几点需要注意：</p>
-<font color=red> 1、left = 0 , right = len(list)。左指针定义为0，右指针为列表长度
-2、while (left < right)，这里使用 < ,因为left == right在区间[left, right)是没有意义的
-3、left 更新为 mid+1，因为它是闭，可以被取；right 更新为 mid，因为它是开，不可被取
-</font>
-
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">search</span>(<span class="params">self , nums: <span class="type">List</span>[<span class="built_in">int</span>], target: <span class="built_in">int</span></span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        <span class="comment">#定义左右指针</span></span><br><span class="line">        left = <span class="number">0</span></span><br><span class="line">        right = <span class="built_in">len</span>(nums)</span><br><span class="line">        <span class="comment">#特殊情况判断</span></span><br><span class="line">        <span class="keyword">if</span> nums == []:</span><br><span class="line">            <span class="keyword">return</span> -<span class="number">1</span></span><br><span class="line">        <span class="comment">#开始查找</span></span><br><span class="line">        <span class="keyword">while</span> left&lt;right:</span><br><span class="line">            mid = (left+right)//<span class="number">2</span></span><br><span class="line">            <span class="keyword">if</span> nums[mid] &gt; target:</span><br><span class="line">                right = mid</span><br><span class="line">            <span class="keyword">elif</span> nums[mid] &lt; target:</span><br><span class="line">                left = mid+<span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">return</span> mid</span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span></span><br></pre></td></tr></table></figure>
-<hr>
-<h2 id="BM18-二维数组中的查找"><a href="#BM18-二维数组中的查找" class="headerlink" title="BM18 二维数组中的查找"></a>BM18 二维数组中的查找</h2><p><a href="https://www.nowcoder.com/practice/abc3fe2ce8e146608e868a70efebf62e?tpId=295&amp;tags=&amp;title=&amp;difficulty=0&amp;judgeStatus=0&amp;rp=0&amp;sourceUrl=%2Fexam%2Foj">二维数组中的查找</a><br><strong>描述</strong><br>在一个二维数组array中（每个一维数组的长度相同），每一行都按照从左到右递增的顺序排序，每一列都按照从上到下递增的顺序排序。请完成一个函数，输入这样的一个二维数组和一个整数，判断数组中是否含有该整数。<br>$[<br>[1,2,8,9],<br>[2,4,9,12],<br>[4,7,10,13],<br>[6,8,11,15]<br>]$<br>给定 target = 7，返回 true。<br>给定 target = 3，返回 false。</p>
-<p>数据范围：矩阵的长宽满足 $0 \le n$,$m \le 500$ ， 矩阵中的值满足 $0 \le val \le 10^9$<br>进阶：空间复杂度 $O(1)$，时间复杂度 $O(n+m)$</p>
-<p><strong>思路</strong><br>我们通过观察可以得知矩阵左下角的值大于它上方的值，小于其右面的值，所以我们从左下角开始搜索，比target大就往上移动，比target小就往右移动。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">Find</span>(<span class="params">self , target: <span class="built_in">int</span>, array: <span class="type">List</span>[<span class="type">List</span>[<span class="built_in">int</span>]]</span>) -&gt; <span class="built_in">bool</span>:</span><br><span class="line">        n = <span class="built_in">len</span>(array[<span class="number">0</span>])-<span class="number">1</span><span class="comment">#长</span></span><br><span class="line">        m = <span class="built_in">len</span>(array)-<span class="number">1</span><span class="comment">#宽</span></span><br><span class="line">        <span class="keyword">if</span> n==<span class="number">0</span> <span class="keyword">or</span> m==<span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        n1 = <span class="number">0</span></span><br><span class="line">        m1 = m</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> m&gt;=m1&gt;=<span class="number">0</span> <span class="keyword">and</span> n&gt;=n1&gt;=<span class="number">0</span>:</span><br><span class="line">            node = array[m1][n1]</span><br><span class="line">            <span class="keyword">if</span> node &gt; target:</span><br><span class="line">                m1 = m1-<span class="number">1</span></span><br><span class="line">            <span class="keyword">elif</span> node &lt; target:</span><br><span class="line">                n1 = n1+<span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">False</span></span><br></pre></td></tr></table></figure>
-<hr>
-<h2 id="BM19-寻找峰值"><a href="#BM19-寻找峰值" class="headerlink" title="BM19 寻找峰值"></a>BM19 寻找峰值</h2><p>[寻找峰值](<a href="https://www.nowcoder.com/practice/fcf87540c4f347bcb4cf720b5b350c76?tpId=295&amp;tqId=2227748&amp;ru=%2Fpractice%2Fabc3fe2ce8e146608e868a70efebf62e&amp;qru=%2Fta%2Fformat-top101%2Fquestion-ranking&amp;sourceUrl=%2Fexam%2Foj）">https://www.nowcoder.com/practice/fcf87540c4f347bcb4cf720b5b350c76?tpId=295&amp;tqId=2227748&amp;ru=%2Fpractice%2Fabc3fe2ce8e146608e868a70efebf62e&amp;qru=%2Fta%2Fformat-top101%2Fquestion-ranking&amp;sourceUrl=%2Fexam%2Foj）</a></p>
-<p><strong>描述</strong><br>给定一个长度为n的数组nums，请你找到峰值并返回其索引。数组可能包含多个峰值，在这种情况下，返回任何一个所在位置即可。<br>1.峰值元素是指其值严格大于左右相邻值的元素。严格大于即不能有等于<br>2.假设 $nums[-1] = nums[n] = -\infty−∞$<br>3.对于所有有效的 i 都有 $nums[i] != nums[i + 1]$<br>4.你可以使用$O(logN)$的时间复杂度实现此问题吗？</p>
-<p>数据范围：<br>$1 \le nums.length \le 2\times 10^5$<br>$-2^{31}&lt;= nums[i] &lt;= 2^{31} -1$</p>
-<p>如输入[2,4,1,2,7,8,4]时，会形成两个山峰，一个是索引为1，峰值为4的山峰，另一个是索引为5，峰值为8的山峰，如下图所示：<br><img src="https://uploadfiles.nowcoder.com/images/20211014/423483716_1634212356346/9EB9CD58B9EA5E04C890326B5C1F471F" alt=""></p>
-<p><strong>思路</strong><br>利用二分查找的思想，找到mid。如果中点右面面的值大，left=mid+1；如果中点左面的值大，right=mid；如果都不大返回mid。循环结束条件是letf==right，此时返回left/right即可。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">findPeakElement</span>(<span class="params">self , nums: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        right = <span class="built_in">len</span>(nums)-<span class="number">1</span></span><br><span class="line">        left = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> left!=right:</span><br><span class="line">            mid = (left+right)//<span class="number">2</span></span><br><span class="line">            <span class="keyword">if</span> nums[mid+<span class="number">1</span>]&gt;nums[mid]:</span><br><span class="line">                left = mid+<span class="number">1</span></span><br><span class="line">            <span class="keyword">elif</span> nums[mid-<span class="number">1</span>]&gt;nums[mid]:</span><br><span class="line">                right = mid</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">return</span> mid</span><br><span class="line">        <span class="keyword">return</span> left</span><br></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>牛客面试必刷TOP101 - 二叉树</title>
+    <url>/2022/09/16/niu-ke-top101-er-cha-shu/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>本笔记为newcoder面试必刷TOP101的二叉树解题思路，笔者能力有限，内容仅供参考。</p>
+<p>本笔记将会包括算法和数据结构方向11个模块，动归、查找/排序、二叉树、链表、堆栈/队列、哈希、递归/回溯、字符串、双指针、贪心和模拟。</p>
+<p>本笔记尚未完结，不定期更新，详细情况请点击右下角阅读更多。<br><span id="more"></span></p>
 <h1 id="二叉树"><a href="#二叉树" class="headerlink" title="二叉树"></a>二叉树</h1><h2 id="BM23-二叉树的前序遍历"><a href="#BM23-二叉树的前序遍历" class="headerlink" title="BM23 二叉树的前序遍历"></a>BM23 二叉树的前序遍历</h2><p><a href="https://www.nowcoder.com/practice/5e2135f4d2b14eb8a5b06fab4c938635?tpId=295&amp;tqId=2291302&amp;ru=/exam/oj&amp;qru=/ta/format-top101/question-ranking&amp;sourceUrl=%2Fexam%2Foj%3Fpage%3D1%26tab%3D%25E7%25AE%2597%25E6%25B3%2595%25E7%25AF%2587%26topicId%3D295">二叉树的前序遍历</a></p>
 <p><strong>描述</strong><br>给你二叉树的根节点 root ，返回它节点值的 前序 遍历。</p>
 <p>数据范围：二叉树的节点数量满足 $0 \le n \le 100   $，二叉树节点的值满足 $1 \le val \le 100  $ ，树的各节点的值各不相同<br><img src="https://uploadfiles.nowcoder.com/images/20211111/392807_1636599059575/FE67E09E9BA5661A7AB9DF9638FB1FAC" alt=""></p>
@@ -594,6 +579,17 @@
 <blockquote>
 <p>这里我使用了双边队列的方式，<font color='green'>from collections import deque<font><br>deque.popleft()、deque.pop()，可以实现堆栈和队列。</p>
 </blockquote>
+]]></content>
+      <tags>
+        <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>牛客面试必刷TOP101 - 动态规划</title>
+    <url>/2022/09/16/niu-ke-top101-dong-tai-gui-hua/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>本笔记为newcoder面试必刷TOP101的动态规划解题思路，笔者能力有限，内容仅供参考。</p>
+<p>本笔记将会包括算法和数据结构方向11个模块，动归、查找/排序、二叉树、链表、堆栈/队列、哈希、递归/回溯、字符串、双指针、贪心和模拟。</p>
+<p>本笔记尚未完结，不定期更新，详细情况请点击右下角阅读更多。<br><span id="more"></span></p>
 <h1 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h1><h2 id="BM65最长公共子序列-二"><a href="#BM65最长公共子序列-二" class="headerlink" title="BM65最长公共子序列(二)"></a>BM65最长公共子序列(二)</h2><p><a href="https://www.nowcoder.com/practice/6d29638c85bb4ffd80c020fe244baf11?tpId=295&amp;tags=&amp;title=&amp;difficulty=0&amp;judgeStatus=0&amp;rp=0&amp;sourceUrl=%2Fexam%2Foj">最长公共子序列(二)</a></p>
 <p><strong>描述</strong><br>给定两个字符串str1和str2，输出两个字符串的最长公共子序列。如果最长公共子序列为空，则返回”-1”。目前给出的数据，仅仅会存在一个最长的公共子序列</p>
 <p>数据范围：$0 \le |str1|,|str2| \le 20000$<br>要求：空间复杂度 $O(n^2)$ ，时间复杂度 $O(n^2)$.</p>
@@ -615,7 +611,7 @@
 <p>解决方法：可以修改递归深度的值，让它变大大一点，在代码开头加入<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> sys   </span><br><span class="line">sys.setrecursionlimit(<span class="number">100000</span>)</span><br></pre></td></tr></table></figure></p>
 ]]></content>
       <tags>
-        <tag>算法笔试</tag>
+        <tag>算法</tag>
       </tags>
   </entry>
 </search>

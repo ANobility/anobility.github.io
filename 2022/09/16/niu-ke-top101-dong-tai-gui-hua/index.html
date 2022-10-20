@@ -12,7 +12,7 @@
         content="width=device-width, initial-scale=1, maximum-scale=1"
       />
       <meta name="baidu-site-verification" content="code-bCi2SAvuDT" />
-      <title>操作系统笔记（6）- 内存管理 上 |  Weber&#39;s island</title>
+      <title>牛客面试必刷TOP101 - 动态规划 |  Weber&#39;s island</title>
   <meta name="generator" content="hexo-theme-ayer">
       
       <link rel="shortcut icon" href="/favicon.ico" />
@@ -55,7 +55,7 @@
     <main class="content on">
       <section class="outer">
   <article
-  id="post-操作系统笔记-内存管理-1"
+  id="post-牛客TOP101-动态规划"
   class="article article-type-post"
   itemscope
   itemprop="blogPost"
@@ -66,7 +66,7 @@
     <header class="article-header">
        
 <h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  操作系统笔记（6）- 内存管理 上
+  牛客面试必刷TOP101 - 动态规划
 </h1>
  
 
@@ -74,15 +74,15 @@
     </header>
      
     <div class="article-meta">
-      <a href="/2022/10/16/cao-zuo-xi-tong-bi-ji-nei-cun-guan-li-1/" class="article-date">
-  <time datetime="2022-10-15T21:12:20.000Z" itemprop="datePublished">2022-10-15</time>
+      <a href="/2022/09/16/niu-ke-top101-dong-tai-gui-hua/" class="article-date">
+  <time datetime="2022-09-15T17:13:30.000Z" itemprop="datePublished">2022-09-15</time>
 </a>   
 <div class="word_count">
     <span class="post-time">
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">333</span>
+            <span class="post-count">1.1k</span>
         </span>
     </span>
 
@@ -91,7 +91,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> 阅读时长≈</span>
-            <span class="post-count">1 分钟</span>
+            <span class="post-count">4 分钟</span>
         </span>
     </span>
 </div>
@@ -106,13 +106,29 @@
   
     <div class="article-entry" itemprop="articleBody">
        
-  <p><meta name="referrer" content="no-referrer"/></p>
-<h1 id="内存管理"><a href="#内存管理" class="headerlink" title="内存管理"></a>内存管理</h1><p><img src="https://pic.leetcode-cn.com/1612665297-yVOICs-os3-0.png" alt=""><br>主存(RAM) 是一件非常重要的资源，必须要认真对待内存。不管存储器有多大，程序大小的增长速度比内存容量的增长速度要快的多。下面我们就来探讨一下操作系统是如何创建内存并管理他们的。</p>
-<span id="more"></span>
-<p>经过多年的研究发现，科学家提出了一种 分层存储器体系(memory hierarchy)，下面是分层体系的分类:<br><img src="https://pic.leetcode-cn.com/1612665300-EydqrQ-os3-1.png" alt=""><br>位于顶层的存储器速度最快，但是相对容量最小，成本非常高。层级结构向下，其访问速度会变慢，但是容量会变大，相对造价也就越便宜。</p>
-<p>操作系统中管理内存层次结构的部分称为内存管理器(memory manager)，它的主要工作是有效的管理内存，记录哪些内存是正在使用的，在进程需要时分配内存以及在进程完成时回收内存。所有现代操作系统都提供内存管理。</p>
-<p>下面我们会对不同的内存管理模型进行探讨，从简单到复杂，由于最低级别的缓存是由硬件进行管理的，所以我们主要探讨主存模型和如何对主存进行管理。</p>
-<h2 id="无存储抽象"><a href="#无存储抽象" class="headerlink" title="无存储抽象"></a>无存储抽象</h2> 
+  <p>本笔记为newcoder面试必刷TOP101的动态规划解题思路，笔者能力有限，内容仅供参考。</p>
+<p>本笔记将会包括算法和数据结构方向11个模块，动归、查找/排序、二叉树、链表、堆栈/队列、哈希、递归/回溯、字符串、双指针、贪心和模拟。</p>
+<p>本笔记尚未完结，不定期更新，详细情况请点击右下角阅读更多。<br><span id="more"></span></p>
+<h1 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h1><h2 id="BM65最长公共子序列-二"><a href="#BM65最长公共子序列-二" class="headerlink" title="BM65最长公共子序列(二)"></a>BM65最长公共子序列(二)</h2><p><a target="_blank" rel="noopener" href="https://www.nowcoder.com/practice/6d29638c85bb4ffd80c020fe244baf11?tpId=295&amp;tags=&amp;title=&amp;difficulty=0&amp;judgeStatus=0&amp;rp=0&amp;sourceUrl=%2Fexam%2Foj">最长公共子序列(二)</a></p>
+<p><strong>描述</strong><br>给定两个字符串str1和str2，输出两个字符串的最长公共子序列。如果最长公共子序列为空，则返回”-1”。目前给出的数据，仅仅会存在一个最长的公共子序列</p>
+<p>数据范围：$0 \le |str1|,|str2| \le 20000$<br>要求：空间复杂度 $O(n^2)$ ，时间复杂度 $O(n^2)$.</p>
+<blockquote>
+<p>输入: “1A2C3D4B56”,”B1D23A456A”<br>返回值: “123456”</p>
+<p>输入: “abc”,”def”<br>返回值: “-1”</p>
+<p>输入： “ab”,””<br>返回值： “-1”</p>
+</blockquote>
+<p><strong>思路：</strong></p>
+<p>题目要求获取最长公共子序列，我们肯定要先知道最长到底是多长，因此肯定要先求最长公共子序列的长度，然后根据这个长度获取这个子序列。</p>
+<p><strong>具体做法：</strong></p>
+<p>step 1：优先检查特殊情况。<br>step 2：获取最长公共子序列的长度可以使用动态规划，我们以dp[i][j]dp[i][j]dp[i][j]表示在s1中以iii结尾，s2中以jjj结尾的字符串的最长公共子序列长度。<br>step 3：遍历两个字符串的所有位置，开始状态转移：若是iii位与jjj位的字符相等，则该问题可以变成1+dp[i−1][j−1]1+dp[i-1][j-1]1+dp[i−1][j−1]，即到此处为止最长公共子序列长度由前面的结果加1。<br>step 4：若是不相等，说明到此处为止的子串，最后一位不可能同时属于最长公共子序列，毕竟它们都不相同，因此我们考虑换成两个子问题，dp[i][j−1]dp[i][j-1]dp[i][j−1]或者dp[i−1][j]dp[i-1][j]dp[i−1][j]，我们取较大的一个就可以了，由此感觉可以用递归解决。<br>step 5：但是递归的复杂度过高，重复计算了很多低层次的部分，因此可以用动态规划，从前往后加，由此形成一个表，表从位置1开始往后相加，正好符合动态规划的转移特征。<br>step 6：因为最后要返回该序列，而不是长度，所以在构造表的同时要以另一个二维矩阵记录上面状态转移时选择的方向，我们用1表示来自左上方，2表示来自左边，3表示来自上边。<br>step 7：获取这个序列的时候，根据从最后一位开始，根据记录的方向，不断递归往前组装字符，只有来自左上的时候才添加本级字符，因为这种情况是动态规划中两个字符相等的情况，字符相等才可用。</p>
+<p><img src="https://uploadfiles.nowcoder.com/images/20210718/397721558_1626591730435/C8A06E419BA9D0380E76B9F353AC0956" alt=""></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="comment">#递归组合成最长相同子序列</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">ans</span>(<span class="params">self,n:<span class="built_in">int</span>,m:<span class="built_in">int</span>,b:<span class="type">List</span>[<span class="type">List</span>[<span class="built_in">int</span>]],s1:<span class="built_in">str</span></span>):</span><br><span class="line">        res = <span class="string">&#x27;&#x27;</span></span><br><span class="line">        <span class="keyword">if</span> b[n][m]==<span class="number">1</span>:</span><br><span class="line">            res+=self.ans(n-<span class="number">1</span>,m-<span class="number">1</span>,b,s1)</span><br><span class="line">            res+=s1[n-<span class="number">1</span>]</span><br><span class="line">        <span class="keyword">elif</span> b[n][m]==<span class="number">2</span>:</span><br><span class="line">            res+=self.ans(n-<span class="number">1</span>,m,b,s1)</span><br><span class="line">        <span class="keyword">elif</span> b[n][m]==<span class="number">3</span>:</span><br><span class="line">            res+=self.ans(n,m-<span class="number">1</span>,b,s1)</span><br><span class="line">        <span class="keyword">return</span> res</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">LCS</span>(<span class="params">self , s1: <span class="built_in">str</span>, s2: <span class="built_in">str</span></span>) -&gt; <span class="built_in">str</span>:</span><br><span class="line">        <span class="comment"># write code here</span></span><br><span class="line">        <span class="comment">#特殊条件判断</span></span><br><span class="line">        <span class="keyword">if</span> s1 <span class="keyword">is</span> <span class="literal">None</span> <span class="keyword">or</span> s2 <span class="keyword">is</span> <span class="literal">None</span> <span class="keyword">or</span> s1 == <span class="string">&#x27;&#x27;</span> <span class="keyword">or</span> s2 == <span class="string">&#x27;&#x27;</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="string">&#x27;-1&#x27;</span></span><br><span class="line">        n = <span class="built_in">len</span>(s1)</span><br><span class="line">        m = <span class="built_in">len</span>(s2)</span><br><span class="line">        <span class="comment">#构造dp最长相同子序列数组矩阵；b方向矩阵；第一行和第一列为0</span></span><br><span class="line">        dp = [[<span class="number">0</span>]*(m+<span class="number">1</span>) <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n+<span class="number">1</span>) ]</span><br><span class="line">        b = [[<span class="number">0</span>]*(m+<span class="number">1</span>) <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n+<span class="number">1</span>)]</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,n+<span class="number">1</span>):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,m+<span class="number">1</span>):</span><br><span class="line">                <span class="keyword">if</span> s1[i-<span class="number">1</span>] == s2[j-<span class="number">1</span>]:</span><br><span class="line">                    dp[i][j] = dp[i-<span class="number">1</span>][j-<span class="number">1</span>]+<span class="number">1</span></span><br><span class="line">                    b[i][j] = <span class="number">1</span></span><br><span class="line">                <span class="keyword">elif</span> dp[i-<span class="number">1</span>][j]&gt;dp[i][j-<span class="number">1</span>]:</span><br><span class="line">                    dp[i][j] = dp[i-<span class="number">1</span>][j]</span><br><span class="line">                    b[i][j] = <span class="number">2</span></span><br><span class="line">                <span class="keyword">else</span> :</span><br><span class="line">                    dp[i][j] = dp[i][j-<span class="number">1</span>]</span><br><span class="line">                    b[i][j] = <span class="number">3</span></span><br><span class="line">        res = self.ans(n,m,b,s1)</span><br><span class="line">        <span class="keyword">if</span> res == <span class="string">&#x27;&#x27;</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="string">&#x27;-1&#x27;</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> res</span><br><span class="line">                    </span><br></pre></td></tr></table></figure>
+<p>当以上代码运行后报错</p>
+<font color=red>RecursionError: maximum recursion depth exceeded in comparison</font>
+
+<p>经过查询资料发现python默认的递归深度是很有限的（默认是1000），因此当递归深度超过999的样子，就会引发这样的一个异常。</p>
+<p>解决方法：可以修改递归深度的值，让它变大大一点，在代码开头加入<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys   </span><br><span class="line">sys.setrecursionlimit(<span class="number">100000</span>)</span><br></pre></td></tr></table></figure></p>
+ 
       <!-- reward -->
       
     </div>
@@ -176,12 +192,12 @@
     <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://weberblog.top/2022/10/16/cao-zuo-xi-tong-bi-ji-nei-cun-guan-li-1/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://weberblog.top/2022/09/16/niu-ke-top101-dong-tai-gui-hua/" alt="微信分享二维码">
     </div>
 </div>
 
 <div id="share-mask"></div>  
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag">操作系统</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li></ul>
 
     </footer>
   </div>
@@ -189,10 +205,19 @@
    
   <nav class="article-nav">
     
-    
       <a href="/2022/09/28/cao-zuo-xi-tong-bi-ji-jin-cheng-diao-du/" class="article-nav-link">
+        <strong class="article-nav-caption">上一篇</strong>
+        <div class="article-nav-title">
+          
+            操作系统笔记（5）- 进程间调度
+          
+        </div>
+      </a>
+    
+    
+      <a href="/2022/09/16/niu-ke-top101-er-fen-cha-zhao-pai-xu/" class="article-nav-link">
         <strong class="article-nav-caption">下一篇</strong>
-        <div class="article-nav-title">操作系统笔记（5）- 进程间调度</div>
+        <div class="article-nav-title">牛客面试必刷TOP101 - 二分查找/排序</div>
       </a>
     
   </nav>
