@@ -117,11 +117,13 @@
 </blockquote>
 <p><strong>思路</strong><br>使用一个递归函数，先搜索树等左子树在搜索树等右子树，将他们放入一个list中，在主函数中返回。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">helper</span>(<span class="params">self,alist,root</span>):</span><br><span class="line">        <span class="keyword">if</span> root == <span class="literal">None</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        alist.append(root.val)</span><br><span class="line">        self.helper(alist,root.left)</span><br><span class="line">        self.helper(alist,root.right)</span><br><span class="line">        </span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">preorderTraversal</span>(<span class="params">self , root: TreeNode</span>) -&gt; <span class="type">List</span>[<span class="built_in">int</span>]:</span><br><span class="line">        <span class="keyword">if</span> root == <span class="literal">None</span>:</span><br><span class="line">            <span class="keyword">return</span> []</span><br><span class="line">        alist = []</span><br><span class="line">        self.helper(alist,root)</span><br><span class="line">        <span class="keyword">return</span> alist</span><br></pre></td></tr></table></figure>
+<hr>
 <h2 id="BM24-二叉树的中序遍历"><a href="#BM24-二叉树的中序遍历" class="headerlink" title="BM24 二叉树的中序遍历"></a>BM24 二叉树的中序遍历</h2><p><a target="_blank" rel="noopener" href="https://www.nowcoder.com/practice/0bf071c135e64ee2a027783b80bf781d?tpId=295&amp;tags=&amp;title=&amp;difficulty=0&amp;judgeStatus=0&amp;rp=0&amp;sourceUrl=%2Fexam%2Foj%3Fpage%3D1%26tab%3D%25E7%25AE%2597%25E6%25B3%2595%25E7%25AF%2587%26topicId%3D295">二叉树等中序遍历</a></p>
 <p><strong>描述</strong><br>给定一个二叉树的根节点root，返回它的中序遍历结果。</p>
 <p>数据范围：二叉树的节点数量满足 $0 \le n \le 100   $，二叉树节点的值满足 $1 \le val \le 1000 $ ，树的各节点的值各不相同</p>
 <p><strong>思路</strong><br>和前序遍历很像，也是使用递归，不过做了一点点差别，就是需要先让左子树递归到尽头再添加节点值到list中，然后添加root到list中，最后遍历右子树。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">helper</span>(<span class="params">self,alist,root</span>):</span><br><span class="line">        <span class="keyword">if</span> root == <span class="literal">None</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        self.helper(alist,root.left)</span><br><span class="line">        alist.append(root.val)</span><br><span class="line">        self.helper(alist,root.right)</span><br><span class="line">        </span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">inorderTraversal</span>(<span class="params">self , root: TreeNode</span>) -&gt; <span class="type">List</span>[<span class="built_in">int</span>]:</span><br><span class="line">        <span class="comment"># write code here</span></span><br><span class="line">        <span class="keyword">if</span> root == <span class="literal">None</span>:</span><br><span class="line">            <span class="keyword">return</span> []</span><br><span class="line">        alist = []</span><br><span class="line">        self.helper(alist,root)</span><br><span class="line">        <span class="keyword">return</span> alist</span><br></pre></td></tr></table></figure>
+<hr>
 <h2 id="BM25-二叉树的后序遍历"><a href="#BM25-二叉树的后序遍历" class="headerlink" title="BM25 二叉树的后序遍历"></a>BM25 二叉树的后序遍历</h2><p><a target="_blank" rel="noopener" href="https://www.nowcoder.com/practice/1291064f4d5d4bdeaefbf0dd47d78541?tpId=295&amp;tags=&amp;title=&amp;difficulty=0&amp;judgeStatus=0&amp;rp=0&amp;sourceUrl=%2Fexam%2Foj%3Fpage%3D1%26tab%3D%25E7%25AE%2597%25E6%25B3%2595%25E7%25AF%2587%26topicId%3D295">二叉树等后序遍历</a></p>
 <p><strong>描述</strong><br>给定一个二叉树的根节点root，返回它的后序遍历结果。</p>
 <p>数据范围：二叉树的节点数量满足 $0 \le n \le 100   $，二叉树节点的值满足 $1 \le val \le 100 $ ，树的各节点的值各不相同</p>
@@ -134,6 +136,7 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> deque</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">levelOrder</span>(<span class="params">self , root: TreeNode</span>) -&gt; <span class="type">List</span>[<span class="type">List</span>[<span class="built_in">int</span>]]:</span><br><span class="line">        <span class="keyword">if</span> root == <span class="literal">None</span>:</span><br><span class="line">            <span class="keyword">return</span> []</span><br><span class="line">        queue = deque([root])</span><br><span class="line">        outValues = []</span><br><span class="line">        <span class="keyword">while</span> queue:</span><br><span class="line">            values=[]</span><br><span class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> queue:</span><br><span class="line">                values.append(i.val)</span><br><span class="line">            n = <span class="built_in">len</span>(values)</span><br><span class="line">            outValues.append(values)</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">                node = queue.popleft()</span><br><span class="line">                <span class="keyword">if</span> node.left:</span><br><span class="line">                    queue.append(node.left)</span><br><span class="line">                <span class="keyword">if</span> node.right:</span><br><span class="line">                    queue.append(node.right)</span><br><span class="line">        <span class="keyword">return</span> outValues</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>这里我使用了双边队列的方式，<font color='green'>from collections import deque</font><br>deque.popleft()、deque.pop()，可以实现堆栈和队列。</p>
+<hr>
 </blockquote>
  
       <!-- reward -->
@@ -623,23 +626,6 @@
     
 
   </div>
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-
-
 </body>
 
 </html>
