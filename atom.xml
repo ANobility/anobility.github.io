@@ -6,7 +6,7 @@
   <link href="http://weberblog.top/atom.xml" rel="self"/>
   
   <link href="http://weberblog.top/"/>
-  <updated>2022-10-25T11:42:50.114Z</updated>
+  <updated>2022-10-26T13:12:32.903Z</updated>
   <id>http://weberblog.top/</id>
   
   <author>
@@ -15,6 +15,24 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>操作系统笔记（7）- 内存管理 下</title>
+    <link href="http://weberblog.top/2022/10/27/cao-zuo-xi-tong-bi-ji-nei-cun-guan-li-2/"/>
+    <id>http://weberblog.top/2022/10/27/cao-zuo-xi-tong-bi-ji-nei-cun-guan-li-2/</id>
+    <published>2022-10-26T17:35:20.000Z</published>
+    <updated>2022-10-26T13:12:32.903Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;/&gt;&lt;/p&gt;
+&lt;h1 id=&quot;内存管理&quot;&gt;&lt;a href=&quot;#内存管理&quot; class=&quot;headerlink&quot; title=&quot;内存管理&quot;&gt;&lt;/a&gt;内存管理&lt;/h1&gt;&lt;p&gt;上一部分我们学习到了无存储抽象和使用地址空间的存储器抽象，接下来这一部分主要讲虚拟内存和页面置换算法。&lt;br&gt;</summary>
+    
+    
+    
+    
+    <category term="操作系统" scheme="http://weberblog.top/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    
+  </entry>
   
   <entry>
     <title>操作系统笔记（6）- 内存管理 上</title>
@@ -95,7 +113,7 @@
     <link href="http://weberblog.top/2022/09/16/niu-ke-top101-er-cha-shu/"/>
     <id>http://weberblog.top/2022/09/16/niu-ke-top101-er-cha-shu/</id>
     <published>2022-09-15T17:12:49.000Z</published>
-    <updated>2022-10-20T15:59:43.083Z</updated>
+    <updated>2022-10-26T01:32:15.099Z</updated>
     
     
     <summary type="html">&lt;p&gt;本笔记为newcoder面试必刷TOP101的二叉树解题思路，笔者能力有限，内容仅供参考。&lt;/p&gt;
@@ -105,7 +123,7 @@
     
     
     
-    <category term="算法" scheme="http://weberblog.top/tags/%E7%AE%97%E6%B3%95/"/>
+    <category term="算法2" scheme="http://weberblog.top/tags/%E7%AE%97%E6%B3%952/"/>
     
   </entry>
   

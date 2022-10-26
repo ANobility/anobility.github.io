@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+
+
+<html lang="zh-CN">
+  
+
+    <head>
+      <meta charset="utf-8" />
+        
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1"
+      />
+      <meta name="baidu-site-verification" content="code-bCi2SAvuDT" />
+      <title>操作系统笔记（7）- 内存管理 下 |  Weber&#39;s island</title>
+  <meta name="generator" content="hexo-theme-ayer">
+      
+      <link rel="shortcut icon" href="/favicon.ico" />
+       
+<link rel="stylesheet" href="/dist/main.css">
+
+      
+<link rel="stylesheet" href="/css/fonts/remixicon.css">
+
+      
+<link rel="stylesheet" href="/css/custom.css">
+ 
+      <script src="https://cdn.staticfile.org/pace/1.2.4/pace.min.js"></script>
+       
+ 
+
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-bulma@5.0.1/bulma.min.css"
+      />
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.js"></script>
+
+      <!-- mermaid -->
+      
+      <style>
+        .swal2-styled.swal2-confirm {
+          font-size: 1.6rem;
+        }
+      </style>
+    <link rel="alternate" href="/atom.xml" title="Weber's island" type="application/atom+xml">
+</head>
+  </html>
+</html>
+
+
+<body>
+  <div id="app">
+    
+      
+    <main class="content on">
+      <section class="outer">
+  <article
+  id="post-操作系统笔记-内存管理-2"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  操作系统笔记（7）- 内存管理 下
+</h1>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2022/10/27/cao-zuo-xi-tong-bi-ji-nei-cun-guan-li-2/" class="article-date">
+  <time datetime="2022-10-26T17:35:20.000Z" itemprop="datePublished">2022-10-26</time>
+</a>   
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> 字数统计:</span>
+            <span class="post-count">4.6k</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> 阅读时长≈</span>
+            <span class="post-count">15 分钟</span>
+        </span>
+    </span>
+</div>
+ 
+    </div>
+      
+    <div class="tocbot"></div>
+
+
+
+
+  
+    <div class="article-entry" itemprop="articleBody">
+       
+  <p><meta name="referrer" content="no-referrer"/></p>
+<h1 id="内存管理"><a href="#内存管理" class="headerlink" title="内存管理"></a>内存管理</h1><p>上一部分我们学习到了无存储抽象和使用地址空间的存储器抽象，接下来这一部分主要讲虚拟内存和页面置换算法。<br><span id="more"></span></p>
+<h2 id="虚拟内存"><a href="#虚拟内存" class="headerlink" title="虚拟内存"></a>虚拟内存</h2><p>尽管基址寄存器和变址寄存器用来创建地址空间的抽象，但是这有一个其他的问题需要解决：管理软件的不断增大(managing bloatware)。虽然内存的大小增长迅速，但是软件的大小增长的要比内存还要快。</p>
+<p>这一发展的结果是，需要运行的程序往往大到内存无法容纳，而且必然需要系统能够支持多个程序同时运行，即使内存可以满足其中单独一个程序的需求，但是从总体上来看内存仍然满足不了日益增长的软件的需求（感觉和xxx和xxx 的矛盾很相似）。而交换技术并不是一个很有效的方案，在一些中小应用程序尚可使用交换，如果应用程序过大，难道还要每次交换几 GB 的内存？这显然是不合适的。</p>
+<p>那么还有没有一种有效的方式来应对呢？有，那就是使用 虚拟内存(virtual memory)，虚拟内存的基本思想是，每个程序都有自己的地址空间，这个地址空间被划分为多个称为页面(page)的块。每一页都是连续的地址范围。这些页被映射到物理内存，但并不是所有的页都必须在内存中才能运行程序。当程序引用到一部分在物理内存中的地址空间时，硬件会立刻执行必要的映射。当程序引用到一部分不在物理内存中的地址空间时，由操作系统负责将缺失的部分装入物理内存并重新执行失败的指令。</p>
+<p>在某种意义上来说，虚拟地址是对基址寄存器和变址寄存器的一种概述。8088 有分离的基址寄存器（但不是变址寄存器）用于放入 text 和 data 。<br>使用虚拟内存，可以将整个地址空间以很小的单位映射到物理内存中，而不是仅仅针对 text 和 data 区进行重定位。下面我们会探讨虚拟内存是如何实现的。<br>虚拟内存很适合在多道程序设计系统中使用，许多程序的片段同时保存在内存中，当一个程序等待它的一部分读入内存时，可以把 CPU 交给另一个进程使用。</p>
+<h3 id="分页"><a href="#分页" class="headerlink" title="分页"></a>分页</h3><p>大部分使用虚拟内存的系统中都会使用一种 分页(paging) 技术。在任何一台计算机上，程序会引用使用一组内存地址。当程序执行</p>
+<blockquote>
+<p>MOV REG,1000<br>这条指令时，它会把内存地址为 1000 的内存单元的内容复制到 REG 中（或者相反，这取决于计算机）。地址可以通过索引、基址寄存器、段寄存器或其他方式产生。</p>
+</blockquote>
+<p>这些程序生成的地址被称为 虚拟地址(virtual addresses) 并形成虚拟地址空间(virtual address space)，在没有虚拟内存的计算机上，系统直接将虚拟地址送到内存中线上，读写操作都使用同样地址的物理内存。在使用虚拟内存时，虚拟地址不会直接发送到内存总线上。相反，会使用 MMU(Memory Management Unit) 内存管理单元把虚拟地址映射为物理内存地址，像下图这样<br><img src="https://pic.leetcode-cn.com/1612665399-zCtvhl-os3-14.png" alt=""><br>下面这幅图展示了这种映射是如何工作的<br><img src="https://pic.leetcode-cn.com/1612665402-JFsZcS-os3-15.png" alt=""><br>页表给出虚拟地址与物理内存地址之间的映射关系。每一页起始于 4096 的倍数位置，结束于 4095 的位置，所以 4K 到 8K 实际为 4096 - 8191 ，8K - 12K 就是 8192 - 12287</p>
+<p>在这个例子中，我们可能有一个 16 位地址的计算机，地址从 0 - 64 K - 1，这些是虚拟地址。然而只有 32 KB 的物理地址。所以虽然可以编写 64 KB 的程序，但是程序无法全部调入内存运行，在磁盘上必须有一个最多 64 KB 的程序核心映像的完整副本，以保证程序片段在需要时被调入内存。</p>
+<h4 id="虚拟内存对眼物理内存映射方式"><a href="#虚拟内存对眼物理内存映射方式" class="headerlink" title="虚拟内存对眼物理内存映射方式"></a>虚拟内存对眼物理内存映射方式</h4><p>虚拟地址空间由固定大小的单元组成，这种固定大小的单元称为 页(pages)。而相对的，物理内存中也有固定大小的物理单元，称为 页框(page frames)。页和页框的大小一样。在上面这个例子中，页的大小为 4KB ，但是实际的使用过程中页的大小范围可能是 512 字节 - 1G 字节的大小。对应于 64 KB 的虚拟地址空间和 32 KB 的物理内存，可得到 16 个虚拟页面和 8 个页框。RAM 和磁盘之间的交换总是以整个页为单元进行交换的。</p>
+<p>程序试图访问地址时，例如执行下面这条指令</p>
+<blockquote>
+<p>MOV REG, 0<br>会将虚拟地址 0 送到 MMU。MMU 看到虚拟地址落在页面 0 （0 - 4095），根据其映射结果，这一页面对应的页框 2 （8192 - 12287），因此 MMU 把地址变换为 8192 ，并把地址 8192 送到总线上。内存对 MMU 一无所知，它只看到一个对 8192 地址的读写请求并执行它。MMU 从而有效的把所有虚拟地址 0 - 4095 映射到了 8192 - 12287 的物理地址。同样的，指令<br>MOV REG, 8192<br>也被有效的转换为<br>MOV REG, 24576<br>虚拟地址 8192（在虚拟页 2 中）被映射到物理地址 24576（在物理页框 6 中）上。</p>
+</blockquote>
+<p>通过恰当的设置 MMU，可以把 16 个虚拟页面映射到 8 个页框中的任何一个。但是这并没有解决虚拟地址空间比物理内存大的问题。</p>
+<p>上图中有 8 个物理页框，于是只有 8 个虚拟页被映射到了物理内存中，在上图中用 X 号表示的其他页面没有被映射。在实际的硬件中，会使用一个 在/不在(Present/absent bit)位记录页面在内存中的实际存在情况。</p>
+<h4 id="虚拟内存没有对应的物理内存"><a href="#虚拟内存没有对应的物理内存" class="headerlink" title="虚拟内存没有对应的物理内存"></a>虚拟内存没有对应的物理内存</h4><p>当程序访问一个未映射的页面，如执行指令</p>
+<blockquote>
+<p>MOV REG, 32780<br>将会发生什么情况呢？虚拟页面 8 （从 32768 开始）的第 12 个字节所对应的物理地址是什么？MMU 注意到该页面没有被映射（在图中用 X 号表示），于是 CPU 会陷入(trap)到操作系统中。这个陷入称为 缺页中断(page fault) 或者是 缺页错误。操作系统会选择一个很少使用的页并把它的内容写入磁盘（如果它不在磁盘上）。随后把需要访问的页面读到刚才回收的页框中，修改映射关系，然后重新启动引起陷入的指令。有点不太好理解，举个例子来看一下。</p>
+</blockquote>
+<p>例如，如果操作系统决定放弃页框 1，那么它将把虚拟机页面 8 装入物理地址 4096，并对 MMU 映射做两处修改。首先，它要将虚拟页中的 1 表项标记为未映射，使以后任何对虚拟地址 4096 - 8191 的访问都将导致陷入。随后把虚拟页面 8 的表项的叉号改为 1，因此在引起陷阱的指令重新启动时，它将把虚拟地址 32780 映射为物理地址（4096 + 12）。</p>
+<h4 id="MMU工作原理"><a href="#MMU工作原理" class="headerlink" title="MMU工作原理"></a>MMU工作原理</h4><p>下面查看一下 MMU 的内部构造以便了解它们是如何工作的，以及了解为什么我们选用的页大小都是 2 的整数次幂。下图我们可以看到一个虚拟地址的例子<br><img src="https://pic.leetcode-cn.com/1612665407-jNlLos-os3-16.png" alt=""><br>虚拟地址 8196 （二进制 0010000000000100）用上面的页表映射图所示的 MMU 映射机制进行映射，输入的 16 位虚拟地址被分为 4 位的页号和 12 位的偏移量。4 位的页号可以表示 16 个页面，12 位的偏移可以为一页内的全部 4096 个字节。</p>
+<p>可用页号作为页表(page table) 的索引，以得出对应于该虚拟页面的页框号。如果在/不在位则是 0 ，则引起一个操作系统陷入。如果该位是 1，则将在页表中查到的页框号复制到输出寄存器的高 3 位中，再加上输入虚拟地址中的低 12 位偏移量。如此就构成了 15 位的物理地址。输出寄存器的内容随即被作为物理地址送到总线。</p>
+<h3 id="页表"><a href="#页表" class="headerlink" title="页表"></a>页表</h3><p>在上面这个简单的例子中，虚拟地址到物理地址的映射可以总结如下：虚拟地址被分为虚拟页号（高位部分）和偏移量（低位部分）。例如，对于 16 位地址和 4 KB 的页面大小，高 4 位可以指定 16 个虚拟页面中的一页，而低 12 位接着确定了所选页面中的偏移量（0-4095）。</p>
+<p>虚拟页号可作为页表的索引用来找到虚拟页中的内容。由页表项可以找到页框号（如果有的话）。然后把页框号拼接到偏移量的高位端，以替换掉虚拟页号，形成物理地址。<br><img src="https://pic.leetcode-cn.com/1612665410-HVwgLy-os3-17.png" alt=""><br>因此，页表的目的是把虚拟页映射到页框中。从数学上说，页表是一个函数，它的参数是虚拟页号，结果是物理页框号。<br>通过这个函数可以把虚拟地址中的虚拟页转换为页框，从而形成物理地址.<br><img src="https://pic.leetcode-cn.com/1612665417-PkTuEE-os3-18.png" alt=""></p>
+<h4 id="页表项结构"><a href="#页表项结构" class="headerlink" title="页表项结构"></a>页表项结构</h4><p>下面我们探讨一下页表项的具体结构，上面你知道了页表项的大致构成，是由页框号和在/不在位构成的，现在我们来具体探讨一下页表项的构成。<br><img src="https://pic.leetcode-cn.com/1612665424-wOBTTK-os3-19.png" alt=""><br>页表项的结构是与机器相关的，但是不同机器上的页表项大致相同。上面是一个页表项的构成，不同计算机的页表项可能不同，但是一般来说都是 32 位(4Byte)的。页表项中最重要的字段就是页框号(Page frame number)。毕竟，页表到页框最重要的一步操作就是要把此值映射过去。下一个比较重要的就是在/不在位，如果此位上的值是 1，那么页表项是有效的并且能够被使用。如果此值是 0 的话，则表示该页表项对应的虚拟页面不在内存中，访问该页面会引起一个缺页异常(page fault)。</p>
+<p>保护位(Protection) 告诉我们哪一种访问是允许的，啥意思呢？最简单的表示形式是这个域只有一位，0 表示可读可写，1 表示的是只读。</p>
+<p>修改位(Modified) 和 访问位(Referenced) 会跟踪页面的使用情况。当一个页面被写入时，硬件会自动的设置修改位。修改位在页面重新分配页框时很有用。如果一个页面已经被修改过（即它是 脏 的），则必须把它写回磁盘。如果一个页面没有被修改过（即它是 干净的），那么重新分配时这个页框会被直接丢弃，因为磁盘上的副本仍然是有效的。这个位有时也叫做 脏位(dirty bit)，因为它反映了页面的状态。</p>
+<p>访问位(Referenced) 在页面被访问时被设置，不管是读还是写。这个值能够帮助操作系统在发生缺页中断时选择要淘汰的页。不再使用的页要比正在使用的页更适合被淘汰。这个位在后面要讨论的页面置换算法中作用很大。</p>
+<p>最后一位用于禁止该页面被高速缓存，这个功能对于映射到设备寄存器还是内存中起到了关键作用。通过这一位可以禁用高速缓存。具有独立的 I/O 空间而不是用内存映射 I/O 的机器来说，并不需要这一位。</p>
+<p>在深入讨论下面问题之前，需要强调一下：虚拟内存本质上是用来创造一个地址空间的抽象，可以把它理解成为进程是对 CPU 的抽象，虚拟内存的实现，本质是将虚拟地址空间分解成页，并将每一项映射到物理内存的某个页框。因为我们的重点是如何管理这个虚拟内存的抽象。</p>
+<h4 id="加速分页表结构"><a href="#加速分页表结构" class="headerlink" title="加速分页表结构"></a>加速分页表结构</h4><p>到现在我们已经虚拟内存(virtual memory) 和 分页(paging) 的基础，现在我们可以把目光放在具体的实现上面了。在任何带有分页的系统中，都会需要面临下面这两个主要问题：</p>
+<p>虚拟地址到物理地址的映射速度必须要快<br>如果虚拟地址空间足够大，那么页表也会足够大<br>第一个问题是由于每次访问内存都需要进行虚拟地址到物理地址的映射，所有的指令最终都来自于内存，并且很多指令也会访问内存中的操作数。</p>
+<p>因此，每条指令可能会多次访问页表，如果执行一条指令需要 1 ns，那么页表查询需要在 0.2 ns 之内完成，以避免映射成为一个主要性能瓶颈。</p>
+<p>第二个问题是所有的现代操作系统都会使用至少 32 位的虚拟地址，并且 64 位正在变得越来越普遍。假设页大小为 4 KB，32 位的地址空间将近有 100 万页，而 64 位地址空间简直多到无法想象。</p>
+<p>对大而且快速的页映射的需要成为构建计算机的一个非常重要的约束。就像上面页表中的图一样，每一个表项对应一个虚拟页面，虚拟页号作为索引。在启动一个进程时，操作系统会把保存在内存中进程页表读副本放入寄存器中。</p>
+<p>所以，在进程的运行过程中，不必再为页表而访问内存。使用这种方法的优势是简单而且映射过程中不需要访问内存。缺点是 页表太大时，代价高昂，而且每次上下文切换的时候都必须装载整个页表，这样会造成性能的降低。鉴于此，我们讨论一下加速分页机制和处理大的虚拟地址空间的实现方案</p>
+<p>转换检测缓冲区<br>我们首先先来一起探讨一下加速分页的问题。大部分优化方案都是从内存中的页表开始的。这种设计对效率有着巨大的影响。考虑一下，例如，假设一条 1 字节的指令要把一个寄存器中的数据复制到另一个寄存器。在不分页的情况下，这条指令只访问一次内存，即从内存取出指令。有了分页机制后，会因为要访问页表而需要更多的内存访问。由于执行速度通常被 CPU 从内存中取指令和数据的速度所限制，这样的话，两次访问才能实现一次的访问效果，所以内存访问的性能会下降一半。在这种情况下，根本不会采用分页机制。</p>
+<p>大多数程序总是对少量页面进行多次访问，而不是对大量页面进行少量访问。因此，只有很少的页面能够被再次访问，而其他的页表项很少被访问。</p>
+<p>基于这种设想，提出了一种方案，即从硬件方面来解决这个问题，为计算机设置一个小型的硬件设备，能够将虚拟地址直接映射到物理地址，而不必再访问页表。这种设备被称为转换检测缓冲区(Translation Lookaside Buffer, TLB)，有时又被称为 相联存储器(associate memory) 。<br><img src="https://pic.leetcode-cn.com/1612665429-ygeVnE-os3-20.png" alt=""><br>是不是你到现在还是有点不理解什么是 TLB，TLB 其实就是一种内存缓存，用于减少访问内存所需要的时间，它就是 MMU 的一部分，TLB 会将虚拟地址到物理地址的转换存储起来，通常可以称为地址翻译缓存(address-translation cache)。TLB 通常位于 CPU 和 CPU 缓存之间，它与 CPU 缓存是不同的缓存级别。下面我们来看一下 TLB 是如何工作的。</p>
+<p>当一个 MMU 中的虚拟地址需要进行转换时，硬件首先检查虚拟页号与 TLB 中所有表项进行并行匹配，判断虚拟页是否在 TLB 中。如果找到了有效匹配项，并且要进行的访问操作没有违反保护位的话，则将页框号直接从 TLB 中取出而不用再直接访问页表。如果虚拟页在 TLB 中但是违反了保护位的权限的话（比如只允许读但是是一个写指令），则会生成一个保护错误(protection fault) 返回。</p>
+<p>上面探讨的是虚拟地址在 TLB 中的情况，那么如果虚拟地址不再 TLB 中该怎么办？如果 MMU 检测到没有有效的匹配项，就会进行正常的页表查找，然后从 TLB 中逐出一个表项然后把从页表中找到的项放在 TLB 中。当一个表项被从 TLB 中清除出，将修改位复制到内存中页表项，除了访问位之外，其他位保持不变。当页表项从页表装入 TLB 中时，所有的值都来自于内存。<br><img src="https://pic.leetcode-cn.com/1612665432-xmGkzu-os3-21.png" alt=""></p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <div class="declare">
+      <ul class="post-copyright">
+        <li>
+          <i class="ri-copyright-line"></i>
+          <strong>版权声明： </strong>
+          
+          本博客所有文章除特别声明外，著作权归作者所有。转载请注明出处！
+          
+        </li>
+      </ul>
+    </div>
+    
+    <footer class="article-footer">
+       
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://weberblog.top/2022/10/27/cao-zuo-xi-tong-bi-ji-nei-cun-guan-li-2/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>  
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag">操作系统</a></li></ul>
+
+    </footer>
+  </div>
+
+   
+  <nav class="article-nav">
+    
+    
+      <a href="/2022/10/16/cao-zuo-xi-tong-bi-ji-nei-cun-guan-li-1/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">操作系统笔记（6）- 内存管理 上</div>
+      </a>
+    
+  </nav>
+
+  
+   
+<div class="gitalk" id="gitalk-container"></div>
+
+<link rel="stylesheet" href="https://cdn.staticfile.org/gitalk/1.7.2/gitalk.min.css">
+
+
+<script src="https://cdn.staticfile.org/gitalk/1.7.2/gitalk.min.js"></script>
+
+
+<script src="https://cdn.staticfile.org/blueimp-md5/2.19.0/js/md5.min.js"></script>
+
+<script type="text/javascript">
+  var gitalk = new Gitalk({
+    clientID: '815b62b4d756403363df',
+    clientSecret: '100f776cb8ace67ebce9661cfefccbc5034b2fb4',
+    repo: 'anobility.github.io',
+    owner: 'anobility',
+    admin: ['anobility'],
+    //proxy: '',
+    // id: location.pathname,      // Ensure uniqueness and length less than 50
+    id: md5(location.pathname),
+    distractionFreeMode: false,  // Facebook-like distraction free mode
+    pagerDirection: 'last'
+  })
+
+  gitalk.render('gitalk-container')
+</script>
+
+     
+</article>
+
+</section>
+      <footer class="footer">
+  <div class="outer">
+    <ul>
+      <li>
+        Copyrights &copy;
+        2022
+        <i class="ri-heart-fill heart_icon"></i> Weber
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+        
+        <span>
+  <span><i class="ri-user-3-fill"></i>访问人数:<span id="busuanzi_value_site_uv"></span></span>
+  <span class="division">|</span>
+  <span><i class="ri-eye-fill"></i>浏览次数:<span id="busuanzi_value_page_pv"></span></span>
+</span>
+        
+      </li>
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      <li>
+        <!-- cnzz统计 -->
+        
+        <script type="text/javascript" src='https://s9.cnzz.com/z_stat.php?id=1278069914&amp;web_id=1278069914'></script>
+        
+      </li>
+    </ul>
+  </div>
+</footer>    
+    </main>
+    <div class="float_btns">
+      <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+
+<div class="todark" id="todark">
+  <i class="ri-moon-line"></i>
+</div>
+
+    </div>
+    <aside class="sidebar on">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/ayer-side.svg" alt="Weber&#39;s island"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories">分类</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/tags">标签</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/friends">友链</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/aboutme">关于我</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="搜索">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="ri-rss-line"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+    </aside>
+    <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>请我喝杯咖啡吧~</p>
+  <div class="reward-box">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/alipay.jpg">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/wechat.jpg">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+</div>
+    
+<script src="/js/jquery-3.6.0.min.js"></script>
+ 
+<script src="/js/lazyload.min.js"></script>
+
+<!-- Tocbot -->
+ 
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  tocbot.init({
+    tocSelector: ".tocbot",
+    contentSelector: ".article-entry",
+    headingSelector: "h1, h2, h3, h4, h5, h6",
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: "main",
+    positionFixedSelector: ".tocbot",
+    positionFixedClass: "is-position-fixed",
+    fixedSidebarOffset: "auto",
+  });
+</script>
+
+<script src="https://cdn.staticfile.org/jquery-modal/0.9.2/jquery.modal.min.js"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.staticfile.org/jquery-modal/0.9.2/jquery.modal.min.css"
+/>
+<script src="https://cdn.staticfile.org/justifiedGallery/3.8.1/js/jquery.justifiedGallery.min.js"></script>
+
+<script src="/dist/main.js"></script>
+
+<!-- ImageViewer -->
+ <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="https://cdn.staticfile.org/photoswipe/4.1.3/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.staticfile.org/photoswipe/4.1.3/default-skin/default-skin.min.css">
+<script src="https://cdn.staticfile.org/photoswipe/4.1.3/photoswipe.min.js"></script>
+<script src="https://cdn.staticfile.org/photoswipe/4.1.3/photoswipe-ui-default.min.js"></script>
+
+<script>
+    function viewer_init() {
+        let pswpElement = document.querySelectorAll('.pswp')[0];
+        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
+
+        $imgArr.forEach(($em, i) => {
+            $em.onclick = () => {
+                // slider展开状态
+                // todo: 这样不好，后面改成状态
+                if (document.querySelector('.left-col.show')) return
+                let items = []
+                $imgArr.forEach(($em2, i2) => {
+                    let img = $em2.getAttribute('data-idx', i2)
+                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+                    let title = $em2.getAttribute('alt')
+                    // 获得原图尺寸
+                    const image = new Image()
+                    image.src = src
+                    items.push({
+                        src: src,
+                        w: image.width || $em2.width,
+                        h: image.height || $em2.height,
+                        title: title
+                    })
+                })
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
+                    index: parseInt(i)
+                });
+                gallery.init()
+            }
+        })
+    }
+    viewer_init()
+</script> 
+<!-- MathJax -->
+
+<!-- Katex -->
+
+<!-- busuanzi  -->
+ 
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+ 
+<!-- ClickLove -->
+ 
+<script src="/js/clickLove.js"></script>
+ 
+<!-- ClickBoom1 -->
+
+<!-- ClickBoom2 -->
+
+<!-- CodeCopy -->
+ 
+<link rel="stylesheet" href="/css/clipboard.css">
+ <script src="https://cdn.staticfile.org/clipboard.js/2.0.10/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="ri-file-copy-2-line"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-checkbox-circle-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-checkbox-circle-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-time-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-time-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+ 
+<!-- CanvasBackground -->
+ 
+<script src="/js/dz.js"></script>
+ 
+<script>
+  if (window.mermaid) {
+    mermaid.initialize({ theme: "forest" });
+  }
+</script>
+
+
+    
+    
+
+  </div>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+</body>
+
+</html>
