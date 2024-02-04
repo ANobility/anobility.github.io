@@ -6,7 +6,7 @@
   <link href="http://weberblog.top/atom.xml" rel="self"/>
   
   <link href="http://weberblog.top/"/>
-  <updated>2022-10-26T13:12:32.903Z</updated>
+  <updated>2024-02-04T13:11:53.244Z</updated>
   <id>http://weberblog.top/</id>
   
   <author>
@@ -15,6 +15,23 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>2024.01.29</title>
+    <link href="http://weberblog.top/2024/02/05/2024-01-29/"/>
+    <id>http://weberblog.top/2024/02/05/2024-01-29/</id>
+    <published>2024-02-04T21:04:09.000Z</published>
+    <updated>2024-02-04T13:11:53.244Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;/&gt;&lt;br&gt;今天是2024年1月29日，地点北京，因为宝宝每天晚上都睡的很晚，所以我想为她讲睡前故事，我将我自己写的故事发布在这里，将我们的爱意也留在这里。&lt;br&gt;</summary>
+    
+    
+    
+    
+    <category term="给宝宝的故事" scheme="http://weberblog.top/tags/%E7%BB%99%E5%AE%9D%E5%AE%9D%E7%9A%84%E6%95%85%E4%BA%8B/"/>
+    
+  </entry>
   
   <entry>
     <title>操作系统笔记（7）- 内存管理 下</title>
